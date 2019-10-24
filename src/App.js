@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import { ThemeProvider } from 'styled-components';
+import { ThemeProvider } from 'styled-components/macro';
 import { theme } from './design-system';
 
 import Navbar from './components/Navbar';
