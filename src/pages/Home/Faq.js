@@ -55,8 +55,8 @@ const Faq = () => {
     <Flex width={1}>
       <Box m="10%">
         <TitleText color="primary">FAQ</TitleText>
-        <Flex my={4}>
-          <Box width={1 / 2}>
+        <Flex my={4} flexWrap="wrap">
+          <Box width={[1, 1, 1 / 2]}>
             {faqs.map((item) => (
               <Box borderBottom="dashed 2px #DEDEDE" mt={3} pt={2} pb={3}>
                 <QuestionText color="primary">{item.question}</QuestionText>
@@ -64,7 +64,7 @@ const Faq = () => {
               </Box>
             ))}
           </Box>
-          <Flex width={1 / 2} justifyContent="center">
+          <Flex width={[1, 1, 1 / 2]} justifyContent="center">
             <Image width={562} src={Bitmap} />
           </Flex>
         </Flex>
