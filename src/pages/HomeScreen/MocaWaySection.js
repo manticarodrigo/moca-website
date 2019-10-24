@@ -18,7 +18,6 @@ import Text from '../../components/Text';
 import { Flex, Image } from '../../design-system';
 
 const MocaWaySection = () => {
-
   const Section = styled(Flex)`
     background-image: url(${SectionImage});
     background-position: center;
@@ -44,7 +43,7 @@ const MocaWaySection = () => {
     background-color: #ffffff;
   `;
 
-  const Icons = [IconOne, IconTwo, IconThree, IconFour, IconFive, IconSix, IconSeven, IconEight, IconNine]
+  const Icons = [IconOne, IconTwo, IconThree, IconFour, IconFive, IconSix, IconSeven, IconEight, IconNine];
 
   const mocaWay = [
     'Direct access to physical therapists',
@@ -74,13 +73,13 @@ const MocaWaySection = () => {
     border-radius: 10px;
     box-shadow: 0 19px 17px 0 rgba(0, 0, 0, 0.17);
     background-color: #ffffff;
-  `
+  `;
 
 
   return (
     <Section flexDirection="column">
       <Card flexDirection="column" mx={200} my={120} bg="white">
-        <Flex justifyContent="end" mx={270} my={45} >
+        <Flex justifyContent="end" mx={270} my={45}>
           <Text primary fontSize={3} mx={50} fontWeight={8}>The MOCA Way</Text>
           <Text grey fontSize={3} mx={50} fontWeight={8}>The Old Way</Text>
         </Flex>
@@ -106,9 +105,9 @@ const MocaWaySection = () => {
               </Block>
             ))}
           </Flex>
-        </Flex >
+        </Flex>
       </Card>
-    </Section >
+    </Section>
   );
 };
 

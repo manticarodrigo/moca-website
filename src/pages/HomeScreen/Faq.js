@@ -1,14 +1,10 @@
 import React from 'react';
 
-import styled from 'styled-components';
-
 import Bitmap from '../../assets/bitmap.png';
-
 import Text from '../../components/Text';
 import { Flex, Image } from '../../design-system';
 
 const Faq = () => {
-
   const questionsAndAnswers = [
     {
       question: 'Where does my treatment occur?',
@@ -28,7 +24,7 @@ const Faq = () => {
     },
     {
       question: 'How do I pay?',
-      answers: 'You will enter your payment information prior to selecting a therapist. After each treatment is completed, your payment is automatically deducted at the agreed-upon pricing.'
+      answers: 'You will enter your payment information prior to selecting a therapist. After each treatment is completed, your payment is automatically deducted at the agreed-upon pricing.',
     },
   ];
 

@@ -8,7 +8,6 @@ import Text from '../../components/Text';
 import { Flex, TextInput } from '../../design-system';
 
 const ContactUs = () => {
-
   const Section = styled(Flex)`
     background-image: url(${SectionImage});
     background-position: center;
@@ -116,6 +115,6 @@ const ContactUs = () => {
       </Flex>
     </Section>
   );
-}
+};
 
 export default ContactUs;

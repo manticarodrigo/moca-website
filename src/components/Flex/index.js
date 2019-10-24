@@ -1,20 +1,19 @@
-import styled, { css } from "styled-components";
-import HeaderImage from "../../assets/map.png";
+import styled, { css } from 'styled-components';
 import {
   space,
   color,
   layout,
   flexbox,
   typography,
-  border
-} from "styled-system";
+  border,
+} from 'styled-system';
+import HeaderImage from '../../assets/map.png';
 
-export default styled("div")`
+export default styled('div')`
   display: flex;
   
-    ${props =>
-      props.card &&
-      css`
+    ${(props) => props.card
+      && css`
         box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
         border-radius: 10px;
         background-color: #ffffff;
@@ -22,9 +21,8 @@ export default styled("div")`
         min-width: 200px;
         width: 250px;
       `}
-    ${props =>
-      props.secandaryCard &&
-      css`
+    ${(props) => props.secandaryCard
+      && css`
         min-height: 166px;
         height: 150px;
         width: 500px;
@@ -34,9 +32,8 @@ export default styled("div")`
         border: solid 2px #bbe4f2;
         background-color: #ffffff;
       `}
-    ${props =>
-      props.headerBackground &&
-      css`
+    ${(props) => props.headerBackground
+      && css`
         background-image: url(${HeaderImage});
       `}
     ${space} ${color} ${layout} ${flexbox} ${typography} ${border};

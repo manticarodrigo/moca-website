@@ -3,5 +3,3 @@ import { Button } from '../../design-system';
 
 export default styled(Button)`
   `;
-
-
