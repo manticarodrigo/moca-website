@@ -7,7 +7,7 @@ import {
   typography,
   border,
 } from 'styled-system';
-import HeaderImage from '../../assets/map.png';
+import HeaderImage from 'assets/map.png';
 
 export default styled('div')`
   display: flex;

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import ReliableImage from '../../assets/reliable.svg';
-import HassalFreeImage from '../../assets/hassle.svg';
-import PersonImage from '../../assets/person.svg';
+import ReliableImage from 'assets/reliable.svg';
+import HassalFreeImage from 'assets/hassle.svg';
+import PersonImage from 'assets/person.svg';
 
-import Text from '../../components/Text';
-import Flex from '../../components/Flex';
+import Text from 'components/Text';
+import Flex from 'components/Flex';
 
-import { Image } from '../../design-system';
+import { Image } from 'design-system';
 
 const FeaturesSection = () => (
   <Flex p={6} justifyContent="center">

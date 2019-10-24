@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Bitmap from '../../assets/bitmap.png';
-import Text from '../../components/Text';
-import { Flex, Image } from '../../design-system';
+import Bitmap from 'assets/bitmap.png';
+import Text from 'components/Text';
+import { Flex, Image } from 'design-system';
 
 const Faq = () => {
   const questionsAndAnswers = [

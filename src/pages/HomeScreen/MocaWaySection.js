@@ -2,20 +2,20 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import SectionImage from '../../assets/therapist.png';
+import SectionImage from 'assets/therapist.png';
 
-import IconOne from '../../assets/1.svg';
-import IconTwo from '../../assets/2.svg';
-import IconThree from '../../assets/3.svg';
-import IconFour from '../../assets/4.svg';
-import IconFive from '../../assets/5.svg';
-import IconSix from '../../assets/6.svg';
-import IconSeven from '../../assets/7.svg';
-import IconEight from '../../assets/8.svg';
-import IconNine from '../../assets/9.svg';
+import IconOne from 'assets/1.svg';
+import IconTwo from 'assets/2.svg';
+import IconThree from 'assets/3.svg';
+import IconFour from 'assets/4.svg';
+import IconFive from 'assets/5.svg';
+import IconSix from 'assets/6.svg';
+import IconSeven from 'assets/7.svg';
+import IconEight from 'assets/8.svg';
+import IconNine from 'assets/9.svg';
 
-import Text from '../../components/Text';
-import { Flex, Image } from '../../design-system';
+import Text from 'components/Text';
+import { Flex, Image } from 'design-system';
 
 const MocaWaySection = () => {
   const Section = styled(Flex)`

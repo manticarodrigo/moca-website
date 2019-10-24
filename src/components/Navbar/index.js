@@ -7,8 +7,8 @@ import styled from 'styled-components';
 import { space } from 'styled-system';
 
 
-import { Flex, Image } from '../../design-system';
-import Logo from '../../assets/moca.svg';
+import Logo from 'assets/moca.svg';
+import { Flex, Image } from 'design-system';
 
 
 const Nav = styled(Flex)`

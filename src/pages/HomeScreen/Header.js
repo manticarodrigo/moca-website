@@ -1,15 +1,15 @@
 import React from 'react';
 
-import AppLogo from '../../assets/App-icon.svg';
-import AppleStoreImage from '../../assets/apple-store.svg';
-import GooglePlayImage from '../../assets/google-play.png';
-import PhoneImage from '../../assets/phone.png';
-import TherapistPhoneImage from '../../assets/therapist-phone.png';
+import AppLogo from 'assets/App-icon.svg';
+import AppleStoreImage from 'assets/apple-store.svg';
+import GooglePlayImage from 'assets/google-play.png';
+import PhoneImage from 'assets/phone.png';
+import TherapistPhoneImage from 'assets/therapist-phone.png';
 
-import Text from '../../components/Text';
-import Flex from '../../components/Flex';
+import Text from 'components/Text';
+import Flex from 'components/Flex';
 
-import { Image } from '../../design-system';
+import { Image } from 'design-system';
 
 const Header = () => (
   <Flex headerBackground justifyContent="space-around" px={5} py={4}>

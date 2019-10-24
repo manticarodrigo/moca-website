@@ -1,15 +1,15 @@
 import React from 'react';
 
-import StatusIcon from '../../assets/status.svg';
-import PinIcon from '../../assets/pinn.svg';
-import TherapistImage from '../../assets/therapist.svg';
+import StatusIcon from 'assets/status.svg';
+import PinIcon from 'assets/pinn.svg';
+import TherapistImage from 'assets/therapist.svg';
 
-import PhoneImage from '../../assets/phone-search.png';
+import PhoneImage from 'assets/phone-search.png';
 
-import { Image } from '../../design-system';
+import { Image } from 'design-system';
 
-import Text from '../../components/Text';
-import Flex from '../../components/Flex';
+import Text from 'components/Text';
+import Flex from 'components/Flex';
 
 const MocaSection = () => (
   <Flex justifyContent="center" flex={1} bg="lighterBlue">

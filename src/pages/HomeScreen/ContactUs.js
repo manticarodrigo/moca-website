@@ -2,10 +2,10 @@ import React from 'react';
 
 import styled from 'styled-components';
 
-import SectionImage from '../../assets/contactUsSection.png';
+import SectionImage from 'assets/contactUsSection.png';
 
-import Text from '../../components/Text';
-import { Flex, TextInput } from '../../design-system';
+import Text from 'components/Text';
+import { Flex, TextInput } from 'design-system';
 
 const ContactUs = () => {
   const Section = styled(Flex)`

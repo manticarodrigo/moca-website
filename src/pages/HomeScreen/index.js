@@ -7,7 +7,7 @@ import MocaWaySection from './MocaWaySection';
 import Faq from './Faq';
 import ContactUs from './ContactUs';
 
-import Flex from '../../components/Flex';
+import Flex from 'components/Flex';
 
 const HomeScreen = () => (
   <Flex flexDirection="column">
