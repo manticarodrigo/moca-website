@@ -12,15 +12,6 @@ import HeaderImage from 'assets/map.png';
 export default styled('div')`
   display: flex;
   
-    ${(props) => props.card
-      && css`
-        box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
-        border-radius: 10px;
-        background-color: #ffffff;
-        min-height: 300px;
-        min-width: 200px;
-        width: 250px;
-      `}
     ${(props) => props.secandaryCard
       && css`
         min-height: 166px;

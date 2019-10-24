@@ -1,52 +1,71 @@
 import React from 'react';
+import styled from 'styled-components/macro';
+
+import {
+  Box, Flex, Image, Text,
+} from 'design-system';
 
 import AppLogo from 'assets/App-icon.svg';
 import AppleStoreImage from 'assets/apple-store.svg';
 import GooglePlayImage from 'assets/google-play.png';
 import PhoneImage from 'assets/phone.png';
 import TherapistPhoneImage from 'assets/therapist-phone.png';
+import HeaderImage from 'assets/map.png';
 
-import Text from 'components/Text';
-import Flex from 'components/Flex';
+// import Text from 'components/Text';
 
-import { Image } from 'design-system';
+
+const HeaderText = styled(Text)`
+  font-size: 64px;
+  font-family: MuseoSansRounded-900; 
+`;
+
+const HeaderTextSmall = styled(Text)`
+  font-size: 24px;
+  font-family: MuseoSansRounded-500; 
+`;
+
+
+const HeroBackground = styled(Box)`
+  background-image: url(${HeaderImage});
+`;
 
 const Header = () => (
-  <Flex headerBackground justifyContent="space-around" px={5} py={4}>
-    <Flex ml={7} flexDirection="column" alignItems="start">
-      <Image src={AppLogo} />
-      <Text headerTitle alignText="left" mt={4}>
-          PHYSICAL THERAPY
-        {' '}
-      </Text>
-      <Flex>
-        <Text headerTitle color="secondaryLight" textAlign="left" mr={3}>
-            DELIVERED
-          {' '}
-        </Text>
-        <Text headerTitle alignText="left">
-            TO YOU
-        </Text>
-      </Flex>
-      <Text headerDescription mt={3}>
+  <HeroBackground>
+    <Flex p={5}>
+      <Flex width={7 / 12}>
+        <Flex ml="30%" flexDirection="column" alignItems="start">
+          <Image width={140} src={AppLogo} />
+          <HeaderText color="primary" mt={4}>PHYSICAL THERAPY</HeaderText>
+          <Flex>
+            <HeaderText color="secondaryLight" mr={3}>DELIVERED</HeaderText>
+            <HeaderText color="primary">TO YOU</HeaderText>
+          </Flex>
+          <HeaderTextSmall color="primary" mt={3}>
           Now available in Salt Lake City and surrounding areas.
-      </Text>
-      <Flex pt={6}>
-        <Flex mr={4}>
-          <Image src={AppleStoreImage} />
-        </Flex>
-        <Flex>
-          <Image src={GooglePlayImage} />
+          </HeaderTextSmall>
+
+          <Flex width={1} pt={6}>
+            <Flex mr={4}>
+              <Image src={AppleStoreImage} />
+            </Flex>
+            <Flex>
+              <Image src={GooglePlayImage} />
+            </Flex>
+          </Flex>
         </Flex>
       </Flex>
-    </Flex>
-    <Flex zIndex={1} mt={2} mb={-8} mr={6}>
-      <Image src={PhoneImage} height={600} />
-      <Flex zIndex={2} mt={50} ml={-7}>
-        <Image height={620} src={TherapistPhoneImage} />
+
+      <Flex width={5 / 12}>
+        <Box zIndex={1} position="absolute" width={423}>
+          <Image src={PhoneImage} />
+        </Box>
+        <Box zIndex={1} ml={6} mt={5} position="absolute" width={423}>
+          <Image width={423} src={TherapistPhoneImage} />
+        </Box>
       </Flex>
     </Flex>
-  </Flex>
+  </HeroBackground>
 );
 
 export default Header;

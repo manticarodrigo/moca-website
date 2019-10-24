@@ -19,8 +19,9 @@ border-color: ${(props) => props.theme.colors.secondaryLight}
 
 const Link = styled(NavLink).attrs({ activeClassName: 'active' })`
   ${space}
+  font-family: MuseoSansRounded-900; 
   text-decoration: none;
-  font-weight: ${(props) => props.theme.fontWeights[8]};
+  font-size: 19px;
   color: ${(props) => props.theme.colors.primary};
   &.active {
     color: ${(props) => props.theme.colors.secondaryLight}
@@ -30,15 +31,15 @@ const Link = styled(NavLink).attrs({ activeClassName: 'active' })`
 
 const NavBar = () => (
   <Nav alignItems="center" flexDirection="column" p={4}>
-    <Image width={140} height={100} src={Logo} />
-    <Flex my={4} justifyContent="center" alignItems="center">
-      <Link mx={4} px={2} exact to="/">  Home </Link>
-      <Link mx={4} px={2} to="/patient"> Patients </Link>
-      <Link mx={4} px={2} to="/therapist"> Therapists </Link>
-      <Link mx={4} px={2} to="/howitworks"> How it Works </Link>
-      <Link mx={4} px={2} to="/faq"> FAQ  </Link>
-      <Link mx={4} px={2} to="/contact"> Contact  </Link>
-      <Link mx={4} px={2} to="/aboutus"> About Us  </Link>
+    <Image width={243} src={Logo} />
+    <Flex mt={4} justifyContent="center" alignItems="center">
+      <Link mx={4} px={2} exact to="/">Home</Link>
+      <Link mx={4} px={2} to="/patient">Patients</Link>
+      <Link mx={4} px={2} to="/therapist">Therapists</Link>
+      <Link mx={4} px={2} to="/howitworks">How it Works</Link>
+      <Link mx={4} px={2} to="/faq">FAQ</Link>
+      <Link mx={4} px={2} to="/contact">Contact</Link>
+      <Link mx={4} px={2} to="/aboutus">About Us</Link>
     </Flex>
   </Nav>
 );

@@ -28,13 +28,11 @@ export const Image = styled('img')({
   layout,
 });
 
-export const Text = styled('div')({
-  fontSize: '24px',
-  fontWeight: '900',
-},
-typography,
-space,
-color);
+export const Text = styled('div')(
+  typography,
+  space,
+  color,
+);
 
 export const TextInput = styled('input')(
   typography,

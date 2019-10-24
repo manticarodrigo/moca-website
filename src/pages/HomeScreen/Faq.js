@@ -1,14 +1,17 @@
 import React from 'react';
+import styled from 'styled-components/macro';
 
 import Bitmap from 'assets/bitmap.png';
-import Text from 'components/Text';
-import { Flex, Image } from 'design-system';
+import {
+  Flex, Box, Image, Text,
+} from 'design-system';
 
 const Faq = () => {
-  const questionsAndAnswers = [
+  const faqs = [
     {
       question: 'Where does my treatment occur?',
-      answers: 'You choose the location that works best for you, whether it be work, home or the gym. Our therapists always come to you.',
+      answers: `You choose the location that works best for you, whether it be work,
+        home or the gym. Our therapists always come to you.`,
     },
     {
       question: 'What equipment do I need?',
@@ -20,28 +23,52 @@ const Faq = () => {
     },
     {
       question: 'Will I always see the same physical therapist?',
-      answers: 'Yes. You can set up an appointment with the same physical therapist based on their availability, or another therapist of your choice.',
+      answers: `Yes. You can set up an appointment with the same physical therapist based on 
+        their availability, or another therapist of your choice.`,
     },
     {
       question: 'How do I pay?',
-      answers: 'You will enter your payment information prior to selecting a therapist. After each treatment is completed, your payment is automatically deducted at the agreed-upon pricing.',
+      answers: `You will enter your payment information prior to selecting a therapist. After 
+      each treatment is completed, your payment is automatically deducted at the agreed-upon 
+      pricing.`,
     },
   ];
 
+
+  const TitleText = styled(Text)`
+    font-family: MuseoSansRounded-700;
+    font-size: 44px;
+  `;
+
+  const QuestionText = styled(Text)`
+    font-family: MuseoSansRounded-700;
+    font-size: 21px;
+  `;
+
+  const AnswerText = styled(Text)`
+  font-family: MuseoSansRounded-500;
+  font-size: 18px;
+`;
+
+
   return (
-    <Flex mx={170} my={120} justifyContent="space-between">
-      <Flex flexDirection="column" width={565}>
-        <Text primaryDark fontSize={4} mb={20} fontWeight={8}>FAQ</Text>
-        {questionsAndAnswers.map((item) => (
-          <Flex flexDirection="column">
-            <Text primary fontSize={2} my={10} fontWeight={6}>{item.question}</Text>
-            <Text grey fontSize={1} my={10} fontWeight={4}>{item.answers}</Text>
+    <Flex width={1}>
+      <Box m="10%">
+        <TitleText color="primary">FAQ</TitleText>
+        <Flex my={4}>
+          <Box width={1 / 2}>
+            {faqs.map((item) => (
+              <Box borderBottom="dashed 2px #DEDEDE" mt={3} pt={2} pb={3}>
+                <QuestionText color="primary">{item.question}</QuestionText>
+                <AnswerText mt={2} color="grey">{item.answers}</AnswerText>
+              </Box>
+            ))}
+          </Box>
+          <Flex width={1 / 2} justifyContent="center">
+            <Image width={562} src={Bitmap} />
           </Flex>
-        ))}
-      </Flex>
-      <Flex alignItems="center" justifyContent="center" p={30}>
-        <Image height={340} width={360} src={Bitmap} />
-      </Flex>
+        </Flex>
+      </Box>
     </Flex>
   );
 };

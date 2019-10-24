@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Flex from 'components/Flex';
+import { Flex } from 'design-system';
 import Header from './Header';
 import FeaturesSection from './FeaturesSection';
 import MocaSection from './MocaSection';

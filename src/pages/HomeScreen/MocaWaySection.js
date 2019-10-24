@@ -15,7 +15,7 @@ import IconEight from 'assets/8.svg';
 import IconNine from 'assets/9.svg';
 
 import Text from 'components/Text';
-import { Flex, Image } from 'design-system';
+import { Flex, Box, Image } from 'design-system';
 
 const MocaWaySection = () => {
   const Section = styled(Flex)`
@@ -24,90 +24,118 @@ const MocaWaySection = () => {
     background-repeat: no-repeat;
   `;
 
-  const Block = styled(Flex)`
-    display:block;
-    margin-top: 16px;
-    margin-bottom: 12px;
-  `;
-
   const Circle = styled(Flex)`
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    margin: 10px;
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
-    box-shadow: 0 19px 17px 0 rgba(0, 0, 0, 0.17);
-    width: 45px;
-    height: 45px;
+    width: 73px;
+    height: 73px;
     box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.14);
     background-color: #ffffff;
   `;
 
-  const Icons = [IconOne, IconTwo, IconThree, IconFour, IconFive, IconSix, IconSeven,
-    IconEight, IconNine];
 
-  const mocaWay = [
-    'Direct access to physical therapists',
-    'Provider and patient driven marketplace',
-    'Transparent pricing (Agreed-upon pricing based on time intervals)',
-    'No insurance needed',
-    'Therapists come to you',
-    'Optimized physical therapist search and filters based on your location',
-    'Direct messaging',
-    'Built-in scheduling based on your availability',
-    'Physical therapist driven documentation',
+  const list = [
+    {
+      new: 'Direct access to physical therapists',
+      old: 'Visit the doctor, then the orthopedist, then the physical therapist (Higher Costs)',
+      icon: IconOne,
+    }, {
+      new: 'Provider and patient driven marketplace',
+      old: 'Insurance and clinic set pricing',
+      icon: IconTwo,
+    }, {
+      new: 'Transparent pricing (Agreed-upon pricing based on time intervals)',
+      old: 'Variable pricing (high premiums, hidden fees)',
+      icon: IconThree,
+    }, {
+      new: 'No insurance needed',
+      old: 'Insurance requirements and paperwork',
+      icon: IconFour,
+    }, {
+      new: 'Therapists come to you',
+      old: 'Excessive wait time at a clinic',
+      icon: IconFive,
+    }, {
+      new: 'Optimized physical therapist search and filters based on your location',
+      old: 'Physical therapists chosen for you',
+      icon: IconSix,
+    }, {
+      new: 'Direct messaging',
+      old: 'Lengthy call back and wait time',
+      icon: IconSeven,
+    }, {
+      new: 'Built-in scheduling based on your availability',
+      old: 'Rigid schedule based on clinic availability',
+      icon: IconEight,
+    }, {
+      new: 'Physical therapist driven documentation',
+      old: 'Insurance driven documentation',
+      icon: IconNine,
+    },
   ];
 
-  const oldWay = [
-    'Visit the doctor, then the orthopedist, then the physical therapist (Higher Costs)',
-    'Insurance and clinic set pricing',
-    'Variable pricing (high premiums, hidden fees)',
-    'Insurance requirements and paperwork',
-    'Excessive wait time at a clinic',
-    'Physical therapists chosen for you',
-    'Lengthy call back and wait time',
-    'Rigid schedule based on clinic availability',
-    'Insurance driven documentation',
-  ];
-
-  const Card = styled(Flex)`
+  const Card = styled(Box)`
     border-radius: 10px;
     box-shadow: 0 19px 17px 0 rgba(0, 0, 0, 0.17);
     background-color: #ffffff;
   `;
 
+  const OldWayText = styled(Text)`
+    font-family: MuseoSansRounded-300;
+    font-size: 18px;
+    color: #6a7e8f;
+  `;
+
+  const NewWayText = styled(Text)`
+    text-align: right;
+    font-family: MuseoSansRounded-700;
+    font-size: 18px;
+    color: #143d6c;
+  `;
+
+  const DescriptionBox = styled(Box)`
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: dashed 2px #DEDEDE;
+  `;
+
+  const TitleText = styled(Text)`
+    font-family: MuseoSansRounded-900;
+    font-size: 34px;
+  `;
 
   return (
     <Section flexDirection="column">
-      <Card flexDirection="column" mx={200} my={120} bg="white">
-        <Flex justifyContent="end" mx={270} my={45}>
-          <Text primary fontSize={3} mx={50} fontWeight={8}>The MOCA Way</Text>
-          <Text grey fontSize={3} mx={50} fontWeight={8}>The Old Way</Text>
+      <Card m="20%" p={4}>
+        <Flex>
+          <Box width={1 / 2}>
+            <TitleText color="primary" textAlign="right">The MOCA Way</TitleText>
+          </Box>
+          <Circle mx={4} style={{ visibility: 'hidden' }} />
+          <Box width={1 / 2}>
+            <TitleText color="grey" textAlign="left">The Old Way</TitleText>
+          </Box>
         </Flex>
-        <Flex px={80}>
-          <Flex flexDirection="column">
-            {mocaWay.map((item) => (
-              <Block justifyContent="start" textAlign="right">
-                <Text primary my={10} fontSize={0} fontWeight={6} mr={20}>{item}</Text>
-              </Block>
-            ))}
-          </Flex>
-          <Flex flexDirection="column">
-            {Icons.map((icon) => (
-              <Circle>
-                <Image width={30} height={30} src={icon} />
+
+        {list.map((item) => (
+          <Flex py={3}>
+            <DescriptionBox width={1 / 2}>
+              <NewWayText textAlign="right">{item.new}</NewWayText>
+            </DescriptionBox>
+            <Box alignItems="center">
+              <Circle mx={4}>
+                <Image width={35} src={item.icon} />
               </Circle>
-            ))}
+            </Box>
+            <DescriptionBox width={1 / 2}>
+              <OldWayText>{item.old}</OldWayText>
+            </DescriptionBox>
           </Flex>
-          <Flex flexDirection="column">
-            {oldWay.map((item) => (
-              <Block>
-                <Text grey my={10} fontSize={0} fontWeight={2} ml={20}>{item}</Text>
-              </Block>
-            ))}
-          </Flex>
-        </Flex>
+        ))}
       </Card>
+
+
     </Section>
   );
 };
