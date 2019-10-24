@@ -88,9 +88,12 @@ const ContactUs = () => {
   return (
     <Section p={50}>
       <Flex flexDirection="column" width={460} m={100}>
-        <Text primary fontSize={5} fontWeight={8} lineHeight={1.56}>Want to help bring MOCA to your area? </Text>
+        <Text primary fontSize={5} fontWeight={8} lineHeight={1.56}>
+          Want to help bring MOCA to your area?
+        </Text>
         <Text primaryLight fontSize={3} fontWeight={6} lineHeight={1.56} my={30}>
-          We are looking to build a coalition of professionals and patients to transform the healthcare industry.
+          We are looking to build a coalition of professionals and patients to transform the
+          healthcare industry.
           And we want you to be part of this vision.
         </Text>
         <Text primaryLight fontSize={3} fontWeight={6} lineHeight={1.56}>

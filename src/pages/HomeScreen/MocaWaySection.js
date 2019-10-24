@@ -43,7 +43,8 @@ const MocaWaySection = () => {
     background-color: #ffffff;
   `;
 
-  const Icons = [IconOne, IconTwo, IconThree, IconFour, IconFive, IconSix, IconSeven, IconEight, IconNine];
+  const Icons = [IconOne, IconTwo, IconThree, IconFour, IconFive, IconSix, IconSeven,
+    IconEight, IconNine];
 
   const mocaWay = [
     'Direct access to physical therapists',
