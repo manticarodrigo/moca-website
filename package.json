@@ -2,6 +2,7 @@
   "name": "moca-website",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://joinmoca.com",
   "dependencies": {
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
@@ -17,6 +18,8 @@
     "styled-system": "^5.1.2"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -43,6 +46,7 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^1.7.0"
+    "eslint-plugin-react-hooks": "^1.7.0",
+    "gh-pages": "^2.1.1"
   }
 }
