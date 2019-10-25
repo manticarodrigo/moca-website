@@ -29,8 +29,9 @@ border-color: ${(props) => props.theme.colors.secondaryLight}
 
 const NavBar = () => (
   <Nav alignItems="center" flexDirection="column" p={4}>
-    <Image width={243} src={Logo} />
-    <Box mt={4} />
+    <Box py={2}>
+      <Image width={243} src={Logo} />
+    </Box>
     {/* <Flex mt={4} justifyContent="center" alignItems="center">
       <Link mx={4} px={2} exact to="/">Home</Link>
       <Link mx={4} px={2} to="/patient">Patients</Link>
