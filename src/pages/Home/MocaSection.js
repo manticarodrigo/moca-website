@@ -5,15 +5,18 @@ import StatusIcon from 'assets/status.svg';
 import PinIcon from 'assets/pinn.svg';
 import TherapistImage from 'assets/therapist.svg';
 
-import PhoneImage from 'assets/phone-search.png';
+import SearchingScreenImage from 'assets/searching-screen.png';
 
 import {
   Box, Flex, Text, Image,
 } from 'design-system';
 
+import Container from 'components/Container';
+
 const Title = styled(Text)`
   font-family: MuseoSansRounded-900;
   font-size: 44px;
+  text-align: center;
 `;
 
 const cards = [{
@@ -43,7 +46,7 @@ const FeatureCard = styled(Flex)`
 `;
 
 const CardTitle = styled(Text)`
-  font-family: MuseoSansRounded-500;
+  font-family: MuseoSansRounded-700;
   font-size: 24px;
   color: #71cfeb;
 `;
@@ -55,7 +58,7 @@ const CardDescription = styled(Text)`
 `;
 
 const Card = ({ img, title, description }) => (
-  <FeatureCard my={2} alignItems="center">
+  <FeatureCard mb={2} alignItems="center">
     <Box pr={4}>
       <Image src={img} />
     </Box>
@@ -68,23 +71,21 @@ const Card = ({ img, title, description }) => (
 
 
 const MocaSection = () => (
-  <Box width={1} bg="lighterBlue">
-    <Flex flexDirection="column" alignItems="center">
-      <Title color="primary" mt={5}>How does MOCA work?</Title>
+  <Container centerMobile bg="lighterBlue">
+    <Title color="primary" py={4}>How does MOCA work?</Title>
 
-      <Flex mx="10%" my={3} flexWrap="wrap">
-        <Box width={[1, 1, 1 / 2]}>
-          <Box pt={3} mt={6} flexDirection="column">
-            {cards.map((c) => <Card {...c} />)}
-          </Box>
+    <Flex flexWrap="wrap">
+      <Box width={[1, 1, 1 / 2]}>
+        <Box pt={3} mt={[0, 0, 6]} flexDirection="column">
+          {cards.map((c) => <Card key={c.title} {...c} />)}
         </Box>
+      </Box>
 
-        <Flex justifyContent="center" width={[1, 1, 1 / 2]}>
-          <Image src={PhoneImage} />
-        </Flex>
+      <Flex mt={[4, 4]} justifyContent={['center', 'center', 'flex-end']} width={[1, 1, 1 / 2]}>
+        <Image width={[350, 500, 500]} src={SearchingScreenImage} />
       </Flex>
     </Flex>
-  </Box>
+  </Container>
 );
 
 export default MocaSection;

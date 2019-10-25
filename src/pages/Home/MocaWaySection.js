@@ -1,6 +1,12 @@
 import React from 'react';
-
+import Responsive from 'react-responsive';
 import styled from 'styled-components/macro';
+
+import {
+  Flex, Text, Box, Image,
+} from 'design-system';
+
+import Container from 'components/Container';
 
 import SectionImage from 'assets/therapist.png';
 
@@ -14,16 +20,47 @@ import IconSeven from 'assets/7.svg';
 import IconEight from 'assets/8.svg';
 import IconNine from 'assets/9.svg';
 
-import Text from 'components/Text';
-import { Flex, Box, Image } from 'design-system';
+const list = [
+  {
+    new: 'Direct access to physical therapists',
+    old: 'Visit the doctor, then the orthopedist, then the physical therapist (Higher Costs)',
+    icon: IconOne,
+  }, {
+    new: 'Provider and patient driven marketplace',
+    old: 'Insurance and clinic set pricing',
+    icon: IconTwo,
+  }, {
+    new: 'Transparent pricing (Agreed-upon pricing based on time intervals)',
+    old: 'Variable pricing (high premiums, hidden fees)',
+    icon: IconThree,
+  }, {
+    new: 'No insurance needed',
+    old: 'Insurance requirements and paperwork',
+    icon: IconFour,
+  }, {
+    new: 'Therapists come to you',
+    old: 'Excessive wait time at a clinic',
+    icon: IconFive,
+  }, {
+    new: 'Optimized physical therapist search and filters based on your location',
+    old: 'Physical therapists chosen for you',
+    icon: IconSix,
+  }, {
+    new: 'Direct messaging',
+    old: 'Lengthy call back and wait time',
+    icon: IconSeven,
+  }, {
+    new: 'Built-in scheduling based on your availability',
+    old: 'Rigid schedule based on clinic availability',
+    icon: IconEight,
+  }, {
+    new: 'Physical therapist driven documentation',
+    old: 'Insurance driven documentation',
+    icon: IconNine,
+  },
+];
 
 const MocaWaySection = () => {
-  const Section = styled(Flex)`
-    background-image: url(${SectionImage});
-    background-position: center;
-    background-repeat: no-repeat;
-  `;
-
   const Circle = styled(Flex)`
     align-items: center;
     justify-content: center;
@@ -33,47 +70,6 @@ const MocaWaySection = () => {
     box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.14);
     background-color: #ffffff;
   `;
-
-
-  const list = [
-    {
-      new: 'Direct access to physical therapists',
-      old: 'Visit the doctor, then the orthopedist, then the physical therapist (Higher Costs)',
-      icon: IconOne,
-    }, {
-      new: 'Provider and patient driven marketplace',
-      old: 'Insurance and clinic set pricing',
-      icon: IconTwo,
-    }, {
-      new: 'Transparent pricing (Agreed-upon pricing based on time intervals)',
-      old: 'Variable pricing (high premiums, hidden fees)',
-      icon: IconThree,
-    }, {
-      new: 'No insurance needed',
-      old: 'Insurance requirements and paperwork',
-      icon: IconFour,
-    }, {
-      new: 'Therapists come to you',
-      old: 'Excessive wait time at a clinic',
-      icon: IconFive,
-    }, {
-      new: 'Optimized physical therapist search and filters based on your location',
-      old: 'Physical therapists chosen for you',
-      icon: IconSix,
-    }, {
-      new: 'Direct messaging',
-      old: 'Lengthy call back and wait time',
-      icon: IconSeven,
-    }, {
-      new: 'Built-in scheduling based on your availability',
-      old: 'Rigid schedule based on clinic availability',
-      icon: IconEight,
-    }, {
-      new: 'Physical therapist driven documentation',
-      old: 'Insurance driven documentation',
-      icon: IconNine,
-    },
-  ];
 
   const Card = styled(Box)`
     border-radius: 10px;
@@ -88,7 +84,6 @@ const MocaWaySection = () => {
   `;
 
   const NewWayText = styled(Text)`
-    text-align: right;
     font-family: MuseoSansRounded-700;
     font-size: 18px;
     color: #143d6c;
@@ -105,38 +100,71 @@ const MocaWaySection = () => {
     font-size: 34px;
   `;
 
+  const DesktopView = (props) => <Responsive {...props} minWidth={1351} />;
+  const MobileView = (props) => <Responsive {...props} maxWidth={1350} />;
+
   return (
-    <Section flexDirection="column">
-      <Card m="20%" p={4}>
-        <Flex>
-          <Box width={1 / 2}>
-            <TitleText color="primary" textAlign="right">The MOCA Way</TitleText>
-          </Box>
-          <Circle mx={4} style={{ visibility: 'hidden' }} />
-          <Box width={1 / 2}>
-            <TitleText color="grey" textAlign="left">The Old Way</TitleText>
-          </Box>
-        </Flex>
+    <Container centerMobile background={`url(${SectionImage})`}>
 
-        {list.map((item) => (
-          <Flex py={3}>
-            <DescriptionBox width={1 / 2}>
-              <NewWayText textAlign="right">{item.new}</NewWayText>
-            </DescriptionBox>
-            <Box alignItems="center">
-              <Circle mx={4}>
-                <Image width={35} src={item.icon} />
-              </Circle>
-            </Box>
-            <DescriptionBox width={1 / 2}>
-              <OldWayText>{item.old}</OldWayText>
-            </DescriptionBox>
+      <Flex flexDirection="column">
+
+        <Card p={4}>
+          <Flex>
+            <DesktopView>
+              <Box width={1 / 2}>
+                <TitleText color="primary" textAlign="right">The MOCA Way</TitleText>
+              </Box>
+              <Circle mx={4} style={{ visibility: 'hidden' }} />
+              <Box width={1 / 2}>
+                <TitleText color="grey" textAlign="left">The Old Way</TitleText>
+              </Box>
+            </DesktopView>
+            <MobileView>
+              <Box width={1}>
+                <TitleText color="primary" textAlign="left">The MOCA Way</TitleText>
+                <TitleText color="grey" textAlign="left">The Old Way</TitleText>
+              </Box>
+              <Circle mx={4} style={{ visibility: 'hidden' }} />
+            </MobileView>
           </Flex>
-        ))}
-      </Card>
 
+          {list.map((item) => (
+            <>
+              <DesktopView>
+                <Flex py={3}>
+                  <DescriptionBox width={1 / 2}>
+                    <NewWayText textAlign="right">{item.new}</NewWayText>
+                  </DescriptionBox>
+                  <Box alignItems="center">
+                    <Circle mx={4}>
+                      <Image width={35} src={item.icon} />
+                    </Circle>
+                  </Box>
+                  <DescriptionBox width={1 / 2}>
+                    <OldWayText>{item.old}</OldWayText>
+                  </DescriptionBox>
+                </Flex>
+              </DesktopView>
+              <MobileView>
+                <Flex py={3} justifyContent="space-between">
+                  <DescriptionBox width={1 / 2}>
+                    <NewWayText>{item.new}</NewWayText>
+                    <OldWayText>{item.old}</OldWayText>
+                  </DescriptionBox>
+                  <Box alignItems="center">
+                    <Circle mx={4}>
+                      <Image width={35} src={item.icon} />
+                    </Circle>
+                  </Box>
+                </Flex>
+              </MobileView>
+            </>
+          ))}
+        </Card>
 
-    </Section>
+      </Flex>
+
+    </Container>
   );
 };
 

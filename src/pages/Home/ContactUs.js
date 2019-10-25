@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components/macro';
+import { space } from 'styled-system';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 import ContactUsImg from 'assets/contactUsSection.png';
@@ -8,11 +9,7 @@ import {
   Flex, Text, Box, TextInput,
 } from 'design-system';
 
-const Section = styled(Flex)`
-  background-image: url(${ContactUsImg});
-  background-position: center;
-  background-repeat: no-repeat;
-`;
+import Container from 'components/Container';
 
 const TitleText = styled(Text)`
   font-family: MuseoSansRounded-900;
@@ -27,17 +24,17 @@ const DescriptionText = styled(Text)`
 `;
 
 const Card = styled(Flex)`
-  min-width: 520px;
-  height: 550px;
+  width: 100%;
   border-radius: 10px;
   box-shadow: -11px 12px 10px 0 rgba(7, 42, 68, 0.13);
   background-color: #ffffff;
 `;
 
 
-const RadioButton = styled('button')`
+const RadioButton = styled.button`
+  ${space}
   flex: 1;
-  margin-right: 5px;
+  padding: 20px;
   border-radius: 10.8px;
   border: solid 1.4px #e2e9ee;
   color: ${({ checked }) => (checked ? '#fff' : '#8ba5b9')};
@@ -47,32 +44,30 @@ const RadioButton = styled('button')`
   text-align: center;
 `;
 
-const Send = styled('button')`
-  width: 290px;
-  height: 50px;
-  padding: 5px;
-  margin: 5px;
+const Send = styled.button`
+  width: 100%;
+  padding: 20px;
+  border-width: 0;
   border-radius: 10.8px;
   background-color: #71cfeb;
-  font-family: MuseoSansRounded;
+  font-family: MuseoSansRounded-700;
   font-size: 24px;
-  font-weight: bold;
   text-align: center;
   color: #ffffff;
 `;
 
 const FormField = styled(TextInput)`
-  height: 75px;
-  padding: 10px;
-  margin: 5px;
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 15px;
   border-radius: 10.8px;
   border-width: 0px;
+  font-family: MuseoSansRounded-300;
+  font-size: 21.6px;
   background-color: #f3f2f7;
+  color: #485c7a;
+
   ::placeholder {
-    width: 104px;
-    height: 26px;
-    font-family: MuseoSansRounded-300;
-    font-size: 21.6px;
     color: #8ba5b9;
   }
 `;
@@ -108,8 +103,9 @@ const ContactForm = ({ onSubmit }) => {
       <FormField value={formData.FNAME} placeholder="Name" onChange={onChangeField('FNAME')} />
       <FormField value={formData.LNAME} placeholder="Last Name" onChange={onChangeField('LNAME')} />
       <FormField value={formData.EMAIL} placeholder="Email Address" onChange={onChangeField('EMAIL')} />
-      <Flex>
+      <Flex mb={3}>
         <RadioButton
+          mr={2}
           checked={formData.TYPE === 'PATIENT'}
           onClick={() => onChangeRadio('PATIENT')}
         >
@@ -132,43 +128,41 @@ const ContactForm = ({ onSubmit }) => {
 };
 
 const ContactUs = () => (
-  <Section>
-    <Flex mx="10%" my="5%">
-      <Box mt={6} width={3.5 / 10}>
-        <TitleText py={1} color="primary"> Want to help bring MOCA to your area? </TitleText>
-        <DescriptionText color="primary" pt={4}>
-          We are looking to build a coalition of professionals and patients to transform the
-          healthcare industry.
-          And we want you to be part of this vision.
-        </DescriptionText>
+  <Container centerMobile background={`url(${ContactUsImg})`}>
+    <Flex style={{ boxSizing: 'border-box' }} flexDirection="column" justifyContent="center" pr={[0, 0, 5]} width={[1, 1, 1 / 2]}>
+      <TitleText py={1} color="primary"> Want to help bring MOCA to your area? </TitleText>
+      <DescriptionText color="primary" pt={4}>
+        We are looking to build a coalition of professionals and patients to transform the
+        healthcare industry.
+        And we want you to be part of this vision.
+      </DescriptionText>
 
-        <DescriptionText color="primary" pt={4}>
-        Leave your contact information below and become a MOCA cohort leader for your area.
-        </DescriptionText>
-      </Box>
-
-      <Box width={6.5 / 10}>
-        <Flex justifyContent="flex-end">
-          <MailchimpSubscribe
-            url={formUrl}
-            render={({ subscribe, status, message }) => (
-              <Card p={4} flexDirection="column">
-                <ContactForm onSubmit={(data) => subscribe(data)} />
-                {status === 'sending' && <div style={{ color: 'blue' }}>sending...</div>}
-                {status === 'error' && (
-                <div
-                  style={{ color: 'red' }}
-                  dangerouslySetInnerHTML={{ __html: message }}
-                />
-                )}
-                {status === 'success' && <div style={{ color: 'green' }}>Subscribed !</div>}
-              </Card>
-            )}
-          />
-        </Flex>
-      </Box>
+      <DescriptionText color="primary" pt={4}>
+      Leave your contact information below and become a MOCA cohort leader for your area.
+      </DescriptionText>
     </Flex>
-  </Section>
+
+    <Flex style={{ boxSizing: 'border-box' }} width={[1, 1, 1 / 2]} my={[4, 4, 0]}>
+      <MailchimpSubscribe
+        url={formUrl}
+        render={({ subscribe, status, message }) => (
+          <Card py={5} px={4} flexDirection="column">
+            <ContactForm onSubmit={(data) => subscribe(data)} />
+            <Flex justifyContent="center" mt={2}>
+              {status === 'sending' && <div style={{ color: 'blue' }}>sending...</div>}
+              {status === 'error' && (
+              <div
+                style={{ color: 'red' }}
+                dangerouslySetInnerHTML={{ __html: message }}
+              />
+              )}
+              {status === 'success' && <div style={{ color: 'green' }}>Subscribed !</div>}
+            </Flex>
+          </Card>
+        )}
+      />
+    </Flex>
+  </Container>
 );
 
 export default ContactUs;

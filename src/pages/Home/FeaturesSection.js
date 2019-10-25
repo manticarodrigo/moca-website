@@ -9,6 +9,8 @@ import {
   Image, Text, Flex, Box,
 } from 'design-system';
 
+import Container from 'components/Container';
+
 const FeatureCard = styled(Flex)`
   flex-direction: column;
   box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
@@ -49,7 +51,7 @@ const cards = [{
     including license verification and background check`,
 }, {
   img: HasselFreeImage,
-  header: 'Hassel-free',
+  header: 'Hassle-free',
   title: 'Fixed costs, no hidden fees, no insurance needed',
   description: `With MOCA, worrying about insurance paperwork, wait time at a clinic, 
     and extra charges are a thing-of-the-past. We protect both patients and providers 
@@ -66,7 +68,7 @@ const cards = [{
 const Card = ({
   img, header, title, description,
 }) => (
-  <FeatureCard p={4} my={3} mr={3} alignItems="center">
+  <FeatureCard p={4} my={3} mr={[0, 0, 3]} alignItems="center">
     <Flex height="80px" justifyContent="center">
       <Image src={img} />
     </Flex>
@@ -79,9 +81,9 @@ const Card = ({
 );
 
 const FeaturesSection = () => (
-  <Flex my={6} justifyContent="center" flexWrap="wrap">
-    {cards.map((c) => <Card {...c} />)}
-  </Flex>
+  <Container centerMobile>
+    {cards.map((c) => <Card key={c.title} {...c} />)}
+  </Container>
 );
 
 export default FeaturesSection;

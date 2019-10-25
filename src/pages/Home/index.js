@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Flex } from 'design-system';
-import Header from './Header';
+import Hero from './Hero';
 import FeaturesSection from './FeaturesSection';
 import MocaSection from './MocaSection';
 import MocaWaySection from './MocaWaySection';
@@ -10,14 +9,14 @@ import ContactUs from './ContactUs';
 
 
 const HomeScreen = () => (
-  <Flex flexDirection="column">
-    <Header />
+  <>
+    <Hero />
     <FeaturesSection />
     <MocaSection />
     <MocaWaySection />
     <Faq />
     <ContactUs />
-  </Flex>
+  </>
 );
 
 export default HomeScreen;
