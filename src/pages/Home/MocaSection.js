@@ -82,7 +82,7 @@ const MocaSection = () => (
       </Box>
 
       <Flex mt={[4, 4]} justifyContent={['center', 'center', 'flex-end']} width={[1, 1, 1 / 2]}>
-        <Image width={[350, 500, 500]} src={SearchingScreenImage} />
+        <Image style={{ objectFit: 'contain' }} width={[350, 500, 500]} height={[590, 870, 870]} src={SearchingScreenImage} />
       </Flex>
     </Flex>
   </Container>
