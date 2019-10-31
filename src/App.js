@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components/macro';
 import { theme } from './design-system';
 import Navbar from './components/Navbar';
 import HomePage from './pages/Home';
+import PatientPage from './pages/Patient';
 
 const AppLayout = ({ children }) => (
   <>
@@ -20,7 +21,7 @@ const AppLayout = ({ children }) => (
 const App = () => (
   <AppLayout>
     <Switch>
-      <Route exact path="/" component={HomePage} />
+      <Route exact path="/" component={PatientPage} />
       {/* <Route exact path="/patient" component={HomeScreen} />
       <Route exact path="/therapist" component={HomeScreen} />
       <Route exact path="/howitworks" component={HomeScreen} />
