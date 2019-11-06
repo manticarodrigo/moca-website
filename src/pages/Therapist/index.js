@@ -5,6 +5,7 @@ import FeaturesSection from './FeaturesSection';
 import PricingSection from './PricingSection';
 import PaymentSection from './PaymentSection';
 import HowItWorks from './HowItWorks';
+import ContactUs from '../Home/ContactUs';
 
 const TherapistScreen = () => (
   <>
@@ -13,6 +14,7 @@ const TherapistScreen = () => (
     <PricingSection />
     <PaymentSection />
     <HowItWorks />
+    <ContactUs />
   </>
 );
 

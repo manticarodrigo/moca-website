@@ -6,6 +6,7 @@ import { theme } from './design-system';
 import Navbar from './components/Navbar';
 import HomePage from './pages/Home';
 import TherapistPage from './pages/Therapist';
+import AboutUsPage from './pages/AboutUs';
 import HomeScreen from './pages/Home';
 
 const AppLayout = ({ children }) => (
@@ -22,7 +23,7 @@ const AppLayout = ({ children }) => (
 const App = () => (
   <AppLayout>
     <Switch>
-      <Route exact path="/" component={TherapistPage} />
+      <Route exact path="/" component={AboutUsPage} />
       {/* <Route exact path="/patient" component={HomeScreen} />
       <Route exact path="/therapist" component={HomeScreen} />
       <Route exact path="/howitworks" component={HomeScreen} />

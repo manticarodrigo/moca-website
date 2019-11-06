@@ -7,6 +7,9 @@ const lighterBlue = '#F6FDFF';
 const dark = '#485c7a';
 const grey = '#6a7e8f';
 const ligthGrey = '#fbfbf8';
+const darkerGrey = '#77899b';
+const blue = '#26336d';
+
 
 export const theme = {
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
@@ -40,7 +43,9 @@ export const theme = {
     lightBlue,
     dark,
     grey,
+    blue,
     lighterBlue,
     ligthGrey,
+    darkerGrey,
   },
 };
