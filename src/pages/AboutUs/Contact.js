@@ -50,6 +50,7 @@ const FormField = styled(TextInput)`
 const Submit = styled.button`
   max-width: 200px;
   width: 200px;
+  height: 80px;
   padding: 10px;
   border-width: 0;
   border-radius: 10.8px;
@@ -61,6 +62,7 @@ const Submit = styled.button`
 
   @media (max-width: 500px) {
     font-size: 20px;
+    height: 50px;
   }
 
 `;

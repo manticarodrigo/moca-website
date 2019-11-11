@@ -7,7 +7,6 @@ import Navbar from './components/Navbar';
 import HomePage from './pages/Home';
 import TherapistPage from './pages/Therapist';
 import AboutUsPage from './pages/AboutUs';
-import HomeScreen from './pages/Home';
 
 const AppLayout = ({ children }) => (
   <>
@@ -23,12 +22,9 @@ const AppLayout = ({ children }) => (
 const App = () => (
   <AppLayout>
     <Switch>
-      <Route exact path="/" component={AboutUsPage} />
-      {/* <Route exact path="/patient" component={HomeScreen} />
-      <Route exact path="/therapist" component={HomeScreen} />
-      <Route exact path="/howitworks" component={HomeScreen} />
-      <Route exact path="/contact" component={HomeScreen} />
-      <Route exact path="/aboutus" component={HomeScreen} /> */}
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/therapist" component={TherapistPage} />
+      <Route exact path="/aboutus" component={AboutUsPage} />
     </Switch>
   </AppLayout>
 );
