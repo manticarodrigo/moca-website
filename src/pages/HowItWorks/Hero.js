@@ -35,18 +35,15 @@ const Hero = () => {
     <HeroContainer>
       <Flex flexDirection="column" pl={150} pt={120} pb={70} pr={50}>
         <HeaderText color="primaryDark">
-          REGAIN CONTROL OF YOUR
+          PHYSICAL THERAPY DELIVERED TO
           {' '}
-          <span style={{ color: '#71cfeb' }}>SCHEDULE</span>
+          <span style={{ color: '#71cfeb' }}>YOU</span>
           .
         </HeaderText>
         <HeaderTextSmall color="grey">
-          Our Physical Therapists tailor your experience by offering
-          {' '}
-          <span style={{ fontFamily: 'MuseoSansRounded-900' }}>personalized treatments</span>
-          {' '}
-          in your ideal environment. Regain control of your schedule while prioritizing your health
-          among personal and professional demands.
+          MOCA was created to meet the needs of both patient and the therapist,
+          empowering them with time and capacity, ability to manage their own schedule
+          and aid in facilitating a high-quality medical service at a location most convenient to you.
         </HeaderTextSmall>
       </Flex>
       <Image src={HeroBackgroundImage} width="50%" />

@@ -6,6 +6,8 @@ import { theme } from './design-system';
 import Navbar from './components/Navbar';
 import HomePage from './pages/Home';
 import PatientPage from './pages/Patient';
+import FaqPage from './pages/Faq';
+import HowItWorksPage from './pages/HowItWorks';
 
 const AppLayout = ({ children }) => (
   <>
@@ -21,12 +23,13 @@ const AppLayout = ({ children }) => (
 const App = () => (
   <AppLayout>
     <Switch>
-      <Route exact path="/" component={PatientPage} />
-      {/* <Route exact path="/patient" component={HomeScreen} />
-      <Route exact path="/therapist" component={HomeScreen} />
-      <Route exact path="/howitworks" component={HomeScreen} />
-      <Route exact path="/contact" component={HomeScreen} />
-      <Route exact path="/aboutus" component={HomeScreen} /> */}
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/patient" component={PatientPage} />
+      <Route exact path="/therapist" component={HomePage} />
+      <Route exact path="/howitworks" component={HowItWorksPage} />
+      <Route exact path="/faq" component={FaqPage} />
+      <Route exact path="/contact" component={HomePage} />
+      <Route exact path="/aboutus" component={FaqPage} />
     </Switch>
   </AppLayout>
 );
