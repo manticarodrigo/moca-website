@@ -6,6 +6,9 @@ const lightBlue = '#FBFAFF;';
 const lighterBlue = '#F6FDFF';
 const dark = '#485c7a';
 const grey = '#6a7e8f';
+const ligthGrey = '#fbfbf8';
+const darkerGrey = '#77899b';
+const blue = '#26336d';
 
 
 export const theme = {
@@ -33,6 +36,16 @@ export const theme = {
   radii: [0, 2, 4, 16, 9999, '100%'],
   maxWidths: [16, 32, 64, 128, 256, 512, 768, 1024, 1536],
   colors: {
-    primary, primaryDark, primaryLight, secondaryLight, lightBlue, dark, grey, lighterBlue,
+    primary,
+    primaryDark,
+    primaryLight,
+    secondaryLight,
+    lightBlue,
+    dark,
+    grey,
+    blue,
+    lighterBlue,
+    ligthGrey,
+    darkerGrey,
   },
 };
