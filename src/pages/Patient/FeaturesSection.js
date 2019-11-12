@@ -26,6 +26,10 @@ const FeaturesSection = () => {
     font-size: 44px;
     font-family: MuseoSansRounded-900;
     line-height: 54px;
+
+    @media (max-width: 500px) {
+      text-align: center;
+    }
   `;
 
   const FeatureCard = styled(Flex)`

@@ -29,11 +29,36 @@ const Hero = () => {
 
   const HeroContainer = styled(Flex)`
     background-color: #e7eff9;
+    box-sizing: border-box;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      overflow: hidden;
+    }
+  `;
+
+  const TextContainer = styled(Flex)`
+    flex-direction: column;
+    padding: 120px 50px 70px 150px;
+   
+    @media (max-width: 500px) {
+      flex-direction: column;
+      padding: 20px;
+      overflow: hidden;
+    }
+  `;
+
+  const HeroImage = styled(Image)`
+    width: 50%;
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   `;
 
   return (
-    <HeroContainer>
-      <Flex flexDirection="column" pl={150} pt={120} pb={70} pr={50}>
+    <HeroContainer maxWidth={1350} width={1}>
+      <TextContainer>
         <HeaderText color="primaryDark">
           REGAIN CONTROL OF YOUR
           {' '}
@@ -48,8 +73,8 @@ const Hero = () => {
           in your ideal environment. Regain control of your schedule while prioritizing your health
           among personal and professional demands.
         </HeaderTextSmall>
-      </Flex>
-      <Image src={HeroBackgroundImage} width="50%" />
+      </TextContainer>
+      <HeroImage src={HeroBackgroundImage} />
     </HeroContainer>
   );
 };

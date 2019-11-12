@@ -46,7 +46,6 @@ const HeroContainer = styled(Flex)`
 const Hero = () => (
   <HeroBackground>
     <HeroContainer py={5} px={[3, 4, 5]} flexWrap="wrap" maxWidth={1350} width={1}>
-
       <Flex flex={1} width={[1, 1, 1 / 2]}>
         <Flex flexDirection="column" alignItems="start">
           <Image width={[80, 80, 117]} src={AppLogo} />

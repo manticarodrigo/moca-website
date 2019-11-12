@@ -11,6 +11,11 @@ const PricingSection = () => {
   const MainContainer = styled(Flex)`
     padding: 50px;
     background-color: #F6FDFF;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+      padding: 0px;
+    }
   `;
 
   const HeaderText = styled(Text)`
@@ -65,6 +70,12 @@ const PricingSection = () => {
     width: 100px;
   `;
 
+  const ImageContainer = styled(Flex)`
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  `;
+
   const priceRange = [
     {
       price: 50,
@@ -82,9 +93,9 @@ const PricingSection = () => {
 
   return (
     <MainContainer>
-      <Flex>
+      <ImageContainer ml={-5}>
         <Image src={PricingScreenImage} />
-      </Flex>
+      </ImageContainer>
       <Flex flexDirection="column" p={50}>
         <HeaderText color="primary">
           PROVIDING A
