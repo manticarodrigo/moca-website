@@ -38,6 +38,7 @@ export const TextInput = styled('input')(
   typography,
   space,
   color,
+  layout,
 );
 
 export const Button = styled('button')(
