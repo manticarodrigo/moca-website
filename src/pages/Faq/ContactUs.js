@@ -8,6 +8,10 @@ import {
 
 const MainContainer = styled(Flex)`
   background-color: #f6fdff;
+
+  @media (max-width: 500px) {
+    padding: 0px;
+  }
 `;
 
 const SubContainer = styled(Flex)`
@@ -69,7 +73,6 @@ const Button = styled.button`
 `;
 
 const ContactUs = () => {
-
   return (
     <MainContainer py={100} px={150}>
       <SubContainer>

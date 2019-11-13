@@ -76,6 +76,25 @@ const PricingSection = () => {
     }
   `;
 
+  const TextContainer = styled(Flex)`
+    @media (max-width: 500px) {
+      padding: 15px;
+    }
+  `;
+
+  const CardContainer = styled(Flex)`
+    @media (max-width: 500px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  `;
+
+  const MobileImage = styled(Image)`
+    @media (max-width: 500px) {
+      width: 370px;
+    }
+  `;
+
   const priceRange = [
     {
       price: 50,
@@ -93,10 +112,10 @@ const PricingSection = () => {
 
   return (
     <MainContainer>
-      <ImageContainer ml={-5}>
-        <Image src={PricingScreenImage} />
+      <ImageContainer>
+        <MobileImage src={PricingScreenImage} />
       </ImageContainer>
-      <Flex flexDirection="column" p={50}>
+      <TextContainer flexDirection="column" p={50}>
         <HeaderText color="primary">
           PROVIDING A
           {' '}
@@ -117,7 +136,7 @@ const PricingSection = () => {
         <SmallTitleText color="primaryDark">
           Average pricing ranges:
         </SmallTitleText>
-        <Flex>
+        <CardContainer>
           {priceRange.map((range) => (
             <PriceCard>
               <PriceText color="secondaryLight">
@@ -127,9 +146,8 @@ const PricingSection = () => {
               <SessionDurationText color="grey">{range.sessionDuration}</SessionDurationText>
             </PriceCard>
           ))}
-        </Flex>
-
-      </Flex>
+        </CardContainer>
+      </TextContainer>
     </MainContainer>
   );
 };

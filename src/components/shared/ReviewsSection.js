@@ -18,6 +18,10 @@ const ReviewsSection = () => {
     padding-right: 150px;
     padding-left: 150px;
     background-color: #f6fdff;
+
+    @media (max-width: 500px) {
+      padding: 0px;
+    }
   `;
 
   const ReviewContainer = styled(Flex)`
