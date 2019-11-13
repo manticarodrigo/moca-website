@@ -5,9 +5,7 @@ import {
   Box, Flex, Image, Text,
 } from 'design-system';
 
-import AppLogo from 'assets/App-icon.svg';
-import ScheduleScreenImage from 'assets/schedule-screen.png';
-import SearchScreenImage from 'assets/search-screen.png';
+import DownloadMocaScreenImage from 'assets/faq-hero-image.png';
 import HeaderImage from 'assets/map.png';
 
 const HeaderText = styled(Text)`
@@ -21,7 +19,8 @@ const HeaderText = styled(Text)`
 
 const HeaderTextSmall = styled(Text)`
   font-size: 24px;
-  font-family: MuseoSansRounded-500; 
+  font-family: MuseoSansRounded-500;
+  line-height: 38px; 
 
   @media (max-width: 500px) {
     font-size: 18px;
@@ -46,18 +45,17 @@ const HeroContainer = styled(Flex)`
 const Hero = () => (
   <HeroBackground>
     <HeroContainer py={5} px={[3, 4, 5]} flexWrap="wrap" maxWidth={1350} width={1}>
+
       <Flex flex={1} width={[1, 1, 1 / 2]}>
         <Flex flexDirection="column" alignItems="start">
-          <Image width={[80, 80, 117]} src={AppLogo} />
-          <HeaderText color="primary" mt={4}>
-            PHYSICAL THERAPY
+          <HeaderText color="primary" mt={4} mb={40}>
+            DOWNLOAD
             {' '}
-            <span style={{ color: '#71cfeb' }}>DELIVERED</span>
-            {' '}
-            TO YOU
+            <span style={{ color: '#71cfeb' }}>MOCA</span>
           </HeaderText>
-          <HeaderTextSmall color="primary" mt={4}>
-            Available soon in Salt Lake City and surrounding areas.
+          <HeaderTextSmall color="grey" mt={4}>
+            MOCA was created to meet the needs of providers and therapists, empowering both with time and capacity,
+            ability to control their schedules, and aid in high-quality medical service at a convenient location.
           </HeaderTextSmall>
 
           {/* <Flex width={1} pt={6}>
@@ -72,12 +70,7 @@ const Hero = () => (
       </Flex>
 
       <Flex width={[1, 1, 1 / 2]} mt={[4, 4]} height={600} position="relative">
-        <Box position="absolute" ml={[-3, -3, 0]}>
-          <Image width={423} maxWidth={['90vw', '90vw']} src={ScheduleScreenImage} />
-        </Box>
-        <Box position="absolute" ml={[4, 4, 6]} mt={[4, 4, 5]}>
-          <Image width={423} maxWidth={['90vw', '90vw']} src={SearchScreenImage} />
-        </Box>
+        <Image width={423} maxWidth={['90vw', '90vw']} src={DownloadMocaScreenImage} />
       </Flex>
 
     </HeroContainer>

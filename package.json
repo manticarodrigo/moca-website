@@ -8,6 +8,7 @@
     "babel-loader": "^8.0.6",
     "eslint-loader": "^3.0.2",
     "react": "^16.10.2",
+    "react-animated-slider": "^1.1.4",
     "react-dom": "^16.10.2",
     "react-mailchimp-subscribe": "^2.1.0",
     "react-responsive": "^8.0.1",

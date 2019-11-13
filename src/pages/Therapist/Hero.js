@@ -53,11 +53,11 @@ const Hero = () => (
         mr={[0, 0, 4]}
         textAlign={['center', 'center', 'left']}
       >
-        <span style={{ color: '#71cfeb' }}>By A</span>
+        <span style={{ color: '#71cfeb' }}>BY A</span>
         {' '}
         PHYSICAL THERAPIST
         {' '}
-        <span style={{ color: '#71cfeb' }}>For</span>
+        <span style={{ color: '#71cfeb' }}>FOR</span>
         {' '}
         PHYSICAL THERAPIST
       </HeaderText>
