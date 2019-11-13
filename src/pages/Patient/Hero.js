@@ -13,7 +13,7 @@ const Hero = () => {
     font-family: MuseoSansRounded-900; 
 
     @media (max-width: 500px) {
-      font-size: 42px;
+      font-size: 35px;
     }
   `;
 
@@ -24,6 +24,7 @@ const Hero = () => {
 
     @media (max-width: 500px) {
       font-size: 18px;
+      line-height: 30px;
     }
   `;
 

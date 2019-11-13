@@ -43,6 +43,10 @@ const FeatureCard = styled(Flex)`
   box-shadow: 0 4px 15px 0 rgba(187, 228, 242, 0.4);
   border: solid 2px #bbe4f2;
   background-color: #ffffff;
+
+  @media (max-width: 500px) {
+    padding: 10px 20px;
+  }
 `;
 
 const CardTitle = styled(Text)`

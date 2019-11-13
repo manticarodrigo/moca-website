@@ -25,8 +25,8 @@ const LogoContainer = styled(Flex)`
 
   @media (max-width: 500px) {
     display: flex;
-    padding-top: 70px;
-    padding-left: 30px;
+    padding-top: 75px;
+    padding-left: 40px;
     justify-content: flex-end;
     width: 100%
   }

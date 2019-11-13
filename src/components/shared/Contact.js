@@ -19,6 +19,10 @@ const SubContainer = styled(Flex)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 500px) {
+    padding: 0px;
+  }
 `;
 
 const HeaderText = styled(Text)`
@@ -29,6 +33,12 @@ const HeaderText = styled(Text)`
   line-height: 54px;
   color: #143d6c;
   text-align: center;
+
+  @media (max-width: 500px) {
+    font-size: 32px;
+    width: 100%;
+    line-height: 40px;
+  }
 `;
 
 const SubHeaderText = styled(Text)`
@@ -39,6 +49,12 @@ const SubHeaderText = styled(Text)`
   line-height: 38px;
   color: #485c7a;
   text-align: center;
+
+  @media (max-width: 500px) {
+    font-size: 18px;
+    width: 100%;
+    line-height: 25px;
+  }
 `;
 
 const EmailField = styled(TextInput)`
@@ -57,6 +73,18 @@ const EmailField = styled(TextInput)`
   ::placeholder {
     color: #8ba5b9;
   }
+
+  @media (max-width: 500px) {
+    width: 350px;
+    margin-bottom: 20px;
+  }
+`;
+
+const EmailContainer = styled(Flex)`
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Button = styled.button`
@@ -72,19 +100,17 @@ const Button = styled.button`
   text-align: center;
 `;
 
-const ContactUs = () => {
-  return (
-    <MainContainer py={100} px={150}>
-      <SubContainer>
-        <HeaderText>Want more information before getting started?</HeaderText>
-        <SubHeaderText>Leave your contact information below and a MOCA specialist will contact you directly.</SubHeaderText>
-        <Flex m={40}>
-          <EmailField placeholder="Email Address" />
-          <Button>Send</Button>
-        </Flex>
-      </SubContainer>
-    </MainContainer>
-  );
-};
+const Contact = () => (
+  <MainContainer py={100} px={150}>
+    <SubContainer>
+      <HeaderText>Want more information before getting started?</HeaderText>
+      <SubHeaderText>Leave your contact information below and a MOCA specialist will contact you directly.</SubHeaderText>
+      <EmailContainer m={40}>
+        <EmailField placeholder="Email Address" />
+        <Button>Send</Button>
+      </EmailContainer>
+    </SubContainer>
+  </MainContainer>
+);
 
-export default ContactUs;
+export default Contact;
