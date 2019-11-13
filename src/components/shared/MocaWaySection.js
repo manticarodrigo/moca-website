@@ -146,7 +146,7 @@ const MocaWaySection = () => {
                 </Flex>
               </DesktopView>
               <MobileView>
-                <Flex py={3} justifyContent="space-between">
+                <Flex py={3} justifyContent="space-between" >
                   <DescriptionBox width={1 / 2}>
                     <NewWayText>{item.new}</NewWayText>
                     <OldWayText>{item.old}</OldWayText>

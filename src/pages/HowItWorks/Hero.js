@@ -24,16 +24,37 @@ const Hero = () => {
 
     @media (max-width: 500px) {
       font-size: 18px;
+      line-height: 30px;
     }
   `;
 
   const HeroContainer = styled(Flex)`
     background-color: #e7eff9;
+
+    @media (max-width: 500px) {
+      flex-direction: column;
+    }
+  `;
+
+  const HeroImage = styled(Image)`
+    width: 50%;
+
+    @media (max-width: 500px) {
+      width: 100%;
+    }
+  `;
+
+  const TextContainer = styled(Flex)`
+    padding: 120px 50px 70px 150px;
+
+    @media (max-width: 500px) {
+      padding: 20px;
+    }
   `;
 
   return (
     <HeroContainer>
-      <Flex flexDirection="column" pl={150} pt={120} pb={70} pr={50}>
+      <TextContainer flexDirection="column">
         <HeaderText color="primaryDark">
           PHYSICAL THERAPY DELIVERED TO
           {' '}
@@ -45,8 +66,8 @@ const Hero = () => {
           empowering them with time and capacity, ability to manage their own schedule
           and aid in facilitating a high-quality medical service at a location most convenient to you.
         </HeaderTextSmall>
-      </Flex>
-      <Image src={HeroBackgroundImage} width="50%" />
+      </TextContainer>
+      <HeroImage src={HeroBackgroundImage} />
     </HeroContainer>
   );
 };

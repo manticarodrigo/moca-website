@@ -1,8 +1,8 @@
 import React from 'react';
 
+import Contact from 'components/shared/Contact';
 import Hero from './Hero';
 import Therapists from './Therapists';
-import Contact from './Contact';
 
 
 const AboutUsScreen = () => (

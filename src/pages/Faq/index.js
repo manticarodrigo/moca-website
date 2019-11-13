@@ -1,14 +1,14 @@
 import React from 'react';
 
+import Contact from 'components/shared/Contact';
 import Hero from './Hero';
 import MainSection from './MainSection';
-import ContactUs from './ContactUs';
 
 const Faq = () => (
   <>
     <Hero />
     <MainSection />
-    <ContactUs />
+    <Contact />
   </>
 );
 

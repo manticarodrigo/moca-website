@@ -16,7 +16,8 @@ const HeaderText = styled(Text)`
   max-width: 600px;
 
   @media (max-width: 500px) {
-    font-size: 24px;
+    font-size: 35px;
+    text-align: start;
   }
 `;
 
@@ -29,6 +30,7 @@ const HeaderTextSmall = styled(Text)`
 
   @media (max-width: 500px) {
     font-size: 18px;
+    text-align: start;
   }
 `;
 
@@ -41,7 +43,7 @@ const Hero = () => (
       flexDirection="column"
       height="100%"
       width={[1, 1, 1 / 2]}
-      mb={6}
+      mb={1}
       pr={[3, 3, 0]}
       pl={[3, 3, 6]}
       alignItems="center"
