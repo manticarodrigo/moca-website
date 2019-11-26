@@ -46,3 +46,9 @@ export const Button = styled('button')(
   space,
   color,
 );
+
+export const HyperLink = styled('a')(
+  typography,
+  space,
+  color,
+);

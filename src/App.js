@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { StickyContainer } from 'react-sticky';
 import { ThemeProvider } from 'styled-components/macro';
 
 import { theme } from './design-system';
@@ -15,8 +16,10 @@ import ContactUs from './pages/Home/ContactUs';
 const AppLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <BrowserRouter>
-      <Navbar />
-      {children}
+      <StickyContainer>
+        <Navbar />
+        {children}
+      </StickyContainer>
     </BrowserRouter>
   </ThemeProvider>
 );
@@ -25,12 +28,12 @@ const App = () => (
   <AppLayout>
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route exact path="/patient" component={PatientPage} />
-      <Route exact path="/therapist" component={TherapistPage} />
-      <Route exact path="/howitworks" component={HowItWorksPage} />
+      <Route exact path="/patients" component={PatientPage} />
+      <Route exact path="/therapists" component={TherapistPage} />
+      <Route exact path="/how-it-works" component={HowItWorksPage} />
       <Route exact path="/faq" component={FaqPage} />
       <Route exact path="/contact" component={ContactUs} />
-      <Route exact path="/aboutus" component={AboutUsPage} />
+      <Route exact path="/about" component={AboutUsPage} />
     </Switch>
   </AppLayout>
 );
