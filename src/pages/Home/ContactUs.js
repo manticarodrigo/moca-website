@@ -5,11 +5,10 @@ import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 import ContactUsImg from 'assets/contactUsSection.png';
 
-import {
-  Flex, Text, Box, TextInput,
-} from 'design-system';
+import { Flex, Text } from 'design-system';
 
 import Container from 'components/Container';
+import FormField from 'components/FormField';
 
 const TitleText = styled(Text)`
   font-family: MuseoSansRounded-900;
@@ -55,23 +54,6 @@ const Send = styled.button`
   text-align: center;
   color: #ffffff;
 `;
-
-const FormField = styled(TextInput)`
-  box-sizing: border-box;
-  padding: 20px;
-  margin-bottom: 15px;
-  border-radius: 10.8px;
-  border-width: 0px;
-  font-family: MuseoSansRounded-300;
-  font-size: 21.6px;
-  background-color: #f3f2f7;
-  color: #485c7a;
-
-  ::placeholder {
-    color: #8ba5b9;
-  }
-`;
-
 
 const formU = '375703606cc64c20b725b1215';
 const formId = '1f0b163534';
@@ -146,7 +128,7 @@ const ContactUs = () => (
       <MailchimpSubscribe
         url={formUrl}
         render={({ subscribe, status, message }) => (
-          <Card py={5} px={4} flexDirection="column">
+          <Card pt={5} px={4} pb={4} flexDirection="column">
             <ContactForm onSubmit={(data) => subscribe(data)} />
             <Flex justifyContent="center" mt={2}>
               {status === 'sending' && <div style={{ color: 'blue' }}>sending...</div>}
