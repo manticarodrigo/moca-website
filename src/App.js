@@ -13,14 +13,12 @@ import AboutUsPage from './pages/AboutUs';
 import ContactUs from './pages/Home/ContactUs';
 
 const AppLayout = ({ children }) => (
-  <>
-    <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Navbar />
-        {children}
-      </BrowserRouter>
-    </ThemeProvider>
-  </>
+  <ThemeProvider theme={theme}>
+    <BrowserRouter>
+      <Navbar />
+      {children}
+    </BrowserRouter>
+  </ThemeProvider>
 );
 
 const App = () => (
