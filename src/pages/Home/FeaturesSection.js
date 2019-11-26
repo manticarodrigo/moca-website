@@ -65,10 +65,8 @@ const cards = [{
     location most convenient to you. `,
 }];
 
-const Card = ({
-  img, header, title, description,
-}) => (
-  <FeatureCard p={4} my={3} mr={[0, 0, 3]} alignItems="center">
+const Card = ({ img, header, title, description }) => (
+  <FeatureCard py={5} px={4} my={3} mr={[0, 0, 3]} alignItems="center">
     <Flex height="80px" justifyContent="center">
       <Image src={img} />
     </Flex>
@@ -76,7 +74,7 @@ const Card = ({
     <Box minHeight="70px">
       <CardTitle mt={3}>{title}</CardTitle>
     </Box>
-    <CardDescription mt={4}>{description}</CardDescription>
+    <CardDescription mt={2}>{description}</CardDescription>
   </FeatureCard>
 );
 
