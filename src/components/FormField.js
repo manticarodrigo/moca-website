@@ -10,12 +10,13 @@ const Placeholder = styled(Text)`
   position: absolute;
   color: #8BA5B9;
   transition: top 0.25s, left 0.25s, font-size 0.25s;
+  pointer-events: none;
 `;
 
 const Input = styled(TextInput)`
   width: 100%;
   box-sizing: border-box;
-  padding: 25px 20px 15px;
+  padding: 30px 20px 10px;
   margin-bottom: 15px;
   border-radius: 10.8px;
   border-width: 0px;
@@ -27,11 +28,13 @@ const Input = styled(TextInput)`
 
 const FormField = ({ value, placeholder, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
+  const focusedOrFilled = isFocused || !!value;
+
   const labelStyle = {
-    top: isFocused ? 5 : 20,
-    left: isFocused ? 18 : 25,
-    fontSize: isFocused ? 16 : 20,
-    fontFamily: isFocused ? 'MuseoSansRounded-300' : 'MuseoSansRounded-500',
+    top: focusedOrFilled ? 8 : 20,
+    left: focusedOrFilled ? 18 : 25,
+    fontSize: focusedOrFilled ? 16 : 20,
+    fontFamily: focusedOrFilled ? 'MuseoSansRounded-300' : 'MuseoSansRounded-500',
   };
 
   const handleFocus = () => setIsFocused(true);
