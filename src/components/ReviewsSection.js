@@ -1,19 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import {
-  Flex, Image, Text,
-} from 'design-system';
+import { Flex, Text } from 'design-system';
 
 import Slider from 'react-animated-slider';
 import 'react-animated-slider/build/horizontal.css';
 
-import StarIcon from 'assets/star.svg';
-
 const ReviewsSection = () => {
-
-  let count;
-
   const MainContainer = styled(Flex)`
     padding-right: 150px;
     padding-left: 150px;

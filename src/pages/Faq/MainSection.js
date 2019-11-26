@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import FaqsFirstSection from 'components/shared/Faq';
+import FaqsFirstSection from 'components/Faq';
 
 import {
   Flex, Box, Text,
 } from 'design-system';
 
-import Container from 'components/Container';
 import FAQImageTwo from 'assets/faqs-image-two.png';
 
 const faqsTwo = [

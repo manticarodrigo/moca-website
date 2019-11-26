@@ -104,7 +104,9 @@ const Contact = () => (
   <MainContainer py={100} px={150}>
     <SubContainer>
       <HeaderText>Want more information before getting started?</HeaderText>
-      <SubHeaderText>Leave your contact information below and a MOCA specialist will contact you directly.</SubHeaderText>
+      <SubHeaderText>
+        Leave your contact information below and a MOCA specialist will contact you directly.
+      </SubHeaderText>
       <EmailContainer m={40}>
         <EmailField placeholder="Email Address" />
         <Button>Send</Button>

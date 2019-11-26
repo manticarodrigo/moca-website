@@ -1,6 +1,6 @@
 import React from 'react';
 
-import ReviewsSection from 'components/shared/ReviewsSection';
+import ReviewsSection from 'components/ReviewsSection';
 import Hero from './Hero';
 import FeaturesSection from './FeaturesSection';
 import PricingSection from './PricingSection';
