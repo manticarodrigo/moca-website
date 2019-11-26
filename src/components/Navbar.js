@@ -43,7 +43,7 @@ const Nav = styled(Flex)`
 `;
 
 const LogoImage = styled(Image)`
-  width: ${({ scrolled }) => (scrolled ? 146 : 243)}px;
+  width: ${({ distance }) => Math.max(146, 243 + distance)}px;
 
   @media (max-width: ${({ theme }) => theme.maxWidths[7]}px) {
     width: 146px;
@@ -176,7 +176,7 @@ const NavBar = () => {
             >
               <Flex alignItems="center">
                 <Flex p={2} justifyContent="center">
-                  <LogoImage scrolled={isScrolled} src={Logo} />
+                  <LogoImage distance={distanceFromTop} src={Logo} />
                 </Flex>
               </Flex>
               <ToggleContainer onClick={toggleMenu}>
