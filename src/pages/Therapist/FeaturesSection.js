@@ -75,7 +75,7 @@ const Card = ({ img, description }) => (
 );
 
 const FeaturesSection = () => (
-  <Container centerMobile>
+  <Container>
     <Flex justifyContent="center">
       <Title color="primary" py={2} textAlign="center">
         Empowering our providers to work for themselves and earn what they

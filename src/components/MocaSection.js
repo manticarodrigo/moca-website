@@ -5,11 +5,9 @@ import StatusIcon from 'assets/status.svg';
 import PinIcon from 'assets/pinn.svg';
 import TherapistImage from 'assets/therapist.svg';
 
-import SearchingScreenImage from 'assets/searching-screen.png';
+import SearchScreenImage from 'assets/pngs/screenshot-keyboard-search.png';
 
-import {
-  Box, Flex, Text, Image,
-} from 'design-system';
+import { Box, Flex, Text, Image } from 'design-system';
 
 import Container from 'components/Container';
 
@@ -63,20 +61,22 @@ const CardDescription = styled(Text)`
 
 const Card = ({ img, title, description }) => (
   <FeatureCard mb={2} alignItems="center">
-    <Box pr={4}>
+    <Flex flex={1}>
       <Image src={img} />
-    </Box>
-    <Box>
+    </Flex>
+    <Flex flex={[3, 4, 5]} flexDirection="column">
       <CardTitle>{title}</CardTitle>
       <CardDescription mt={2}>{description}</CardDescription>
-    </Box>
+    </Flex>
   </FeatureCard>
 );
 
 
 const MocaSection = () => (
-  <Container centerMobile bg="lighterBlue">
-    <Title color="primary" py={4}>How does MOCA work?</Title>
+  <Container bg="lighterBlue">
+    <Title style={{ width: '100%' }} textAlign="center" color="primary" py={4}>
+      How does MOCA work?
+    </Title>
 
     <Flex flexWrap="wrap">
       <Box width={[1, 1, 1 / 2]}>
@@ -86,7 +86,12 @@ const MocaSection = () => (
       </Box>
 
       <Flex mt={[4, 4]} justifyContent={['center', 'center', 'flex-end']} width={[1, 1, 1 / 2]}>
-        <Image style={{ objectFit: 'contain' }} width={[350, 500, 500]} height={[590, 870, 870]} src={SearchingScreenImage} />
+        <Image
+          style={{ objectFit: 'contain' }}
+          width={[350, 500, 500]}
+          height={[590, 870, 870]}
+          src={SearchScreenImage}
+        />
       </Flex>
     </Flex>
   </Container>

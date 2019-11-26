@@ -79,7 +79,7 @@ const Card = ({ img, header, title, description }) => (
 );
 
 const FeaturesSection = () => (
-  <Container centerMobile>
+  <Container>
     {cards.map((c) => <Card key={c.title} {...c} />)}
   </Container>
 );

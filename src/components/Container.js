@@ -19,15 +19,13 @@ const WrapperInner = styled(Flex)`
   box-sizing: border-box;
 `;
 
-const Container = ({
-  centerMobile, children, background, ...otherProps
-}) => (
+const Container = ({ children, background, ...otherProps }) => (
   <Wrapper background={background} {...otherProps}>
     <WrapperInner
+      flexWrap="wrap"
+      justifyContent={['center', 'center', 'flex-start']}
       py={[4, 4, 6]}
       px={[3, 4, 5]}
-      flexWrap="wrap"
-      justifyContent={[centerMobile && 'center', centerMobile && 'center']}
       maxWidth={1350}
     >
       {children}

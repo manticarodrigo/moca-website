@@ -16,7 +16,7 @@ import ContactUs from './pages/Home/ContactUs';
 const AppLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
     <BrowserRouter>
-      <StickyContainer>
+      <StickyContainer style={{ overflow: 'hidden' }}>
         <Navbar />
         {children}
       </StickyContainer>

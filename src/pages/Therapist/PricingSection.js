@@ -119,7 +119,7 @@ const Card = ({ title, description }) => (
 );
 
 const PricingSection = () => (
-  <Container centerMobile bg="lighterBlue">
+  <Container bg="lighterBlue">
     <Flex
       mt={4}
       ml={[0, 0, -6]}

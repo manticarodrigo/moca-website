@@ -1,14 +1,11 @@
 import React from 'react';
-import Responsive from 'react-responsive';
 import styled from 'styled-components/macro';
 
-import {
-  Flex, Text, Box, Image,
-} from 'design-system';
+import { Flex, Text, Box, Image } from 'design-system';
 
 import Container from 'components/Container';
 
-import SectionImage from 'assets/therapist.png';
+import SectionBgImage from 'assets/jpgs/moca-way-bg.jpg';
 
 import IconOne from 'assets/1.svg';
 import IconTwo from 'assets/2.svg';
@@ -60,112 +57,84 @@ const list = [
   },
 ];
 
-const MocaWaySection = () => {
-  const Circle = styled(Flex)`
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    width: 73px;
-    height: 73px;
-    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.14);
-    background-color: #ffffff;
-  `;
+const Circle = styled(Flex)`
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.14);
+  background-color: #ffffff;
+`;
 
-  const Card = styled(Box)`
-    border-radius: 10px;
-    box-shadow: 0 19px 17px 0 rgba(0, 0, 0, 0.17);
-    background-color: #ffffff;
-  `;
+const Card = styled(Box)`
+  border-radius: 10px;
+  box-shadow: 0 19px 17px 0 rgba(0, 0, 0, 0.17);
+  background-color: #ffffff;
+`;
 
-  const OldWayText = styled(Text)`
-    font-family: MuseoSansRounded-300;
-    font-size: 18px;
-    color: #6a7e8f;
-  `;
+const ListContainer = styled(Flex)``;
 
-  const NewWayText = styled(Text)`
-    font-family: MuseoSansRounded-700;
-    font-size: 18px;
-    color: #143d6c;
-  `;
+const OldWayText = styled(Text)`
+  font-family: MuseoSansRounded-300;
+  font-size: 18px;
+  color: #6a7e8f;
+`;
 
-  const DescriptionBox = styled(Box)`
-    padding-top: 10px;
-    padding-bottom: 10px;
+const NewWayText = styled(Text)`
+  font-family: MuseoSansRounded-700;
+  font-size: 18px;
+  color: #143d6c;
+`;
+
+const DescriptionBox = styled(Box)`
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  ${ListContainer}:not(:last-child) > & {
     border-bottom: dashed 2px #DEDEDE;
-  `;
+  }
+`;
 
-  const TitleText = styled(Text)`
-    font-family: MuseoSansRounded-900;
-    font-size: 34px;
-  `;
+const TitleText = styled(Text)`
+  font-family: MuseoSansRounded-900;
+  font-size: 34px;
+`;
 
-  const DesktopView = (props) => <Responsive {...props} minWidth={1351} />;
-  const MobileView = (props) => <Responsive {...props} maxWidth={1350} />;
+const MocaWaySection = () => (
+  <Container background={`url(${SectionBgImage})`}>
 
-  return (
-    <Container centerMobile background={`url(${SectionImage})`}>
+    <Flex flexDirection="column">
 
-      <Flex flexDirection="column">
+      <Card p={[3, 3, 4]}>
+        <Flex>
+          <Box py={[3, 3, 4]} width={1 / 2}>
+            <TitleText color="primary" textAlign="right">The MOCA Way</TitleText>
+          </Box>
+          <Circle mx={4} style={{ visibility: 'hidden' }} />
+          <Box py={[3, 3, 4]} width={1 / 2}>
+            <TitleText color="grey" textAlign="left">The Old Way</TitleText>
+          </Box>
+        </Flex>
 
-        <Card p={4}>
-          <Flex>
-            <DesktopView>
-              <Box width={1 / 2}>
-                <TitleText color="primary" textAlign="right">The MOCA Way</TitleText>
-              </Box>
-              <Circle mx={4} style={{ visibility: 'hidden' }} />
-              <Box width={1 / 2}>
-                <TitleText color="grey" textAlign="left">The Old Way</TitleText>
-              </Box>
-            </DesktopView>
-            <MobileView>
-              <Box width={1}>
-                <TitleText color="primary" textAlign="left">The MOCA Way</TitleText>
-                <TitleText color="grey" textAlign="left">The Old Way</TitleText>
-              </Box>
-              <Circle mx={4} style={{ visibility: 'hidden' }} />
-            </MobileView>
-          </Flex>
+        {list.map((item, index) => (
+          <ListContainer key={index} py={3}>
+            <DescriptionBox width={1 / 2}>
+              <NewWayText textAlign="right">{item.new}</NewWayText>
+            </DescriptionBox>
+            <Box alignItems="center">
+              <Circle mx={[3, 3, 4]} width={[50, 50, 73]} height={[50, 50, 73]}>
+                <Image width={[30, 30, 35]} src={item.icon} />
+              </Circle>
+            </Box>
+            <DescriptionBox width={1 / 2}>
+              <OldWayText>{item.old}</OldWayText>
+            </DescriptionBox>
+          </ListContainer>
+        ))}
+      </Card>
 
-          {list.map((item) => (
-            <>
-              <DesktopView>
-                <Flex py={3}>
-                  <DescriptionBox width={1 / 2}>
-                    <NewWayText textAlign="right">{item.new}</NewWayText>
-                  </DescriptionBox>
-                  <Box alignItems="center">
-                    <Circle mx={4}>
-                      <Image width={35} src={item.icon} />
-                    </Circle>
-                  </Box>
-                  <DescriptionBox width={1 / 2}>
-                    <OldWayText>{item.old}</OldWayText>
-                  </DescriptionBox>
-                </Flex>
-              </DesktopView>
-              <MobileView>
-                <Flex py={3} justifyContent="space-between">
-                  <DescriptionBox width={1 / 2}>
-                    <NewWayText>{item.new}</NewWayText>
-                    <OldWayText>{item.old}</OldWayText>
-                  </DescriptionBox>
-                  <Box alignItems="center">
-                    <Circle mx={4}>
-                      <Image width={35} src={item.icon} />
-                    </Circle>
-                  </Box>
-                </Flex>
-              </MobileView>
-            </>
-          ))}
-        </Card>
+    </Flex>
 
-      </Flex>
-
-    </Container>
-  );
-};
+  </Container>
+);
 
 export default MocaWaySection;

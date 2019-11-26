@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import {
-  Box, Flex, Image, Text,
-} from 'design-system';
+import { Box, Flex, Image, Text } from 'design-system';
 
 import AppLogo from 'assets/App-icon.svg';
-import ScheduleScreenImage from 'assets/schedule-screen.png';
-import SearchScreenImage from 'assets/search-screen.png';
-import HeaderImage from 'assets/map.png';
+import CalendarScreenImage from 'assets/pngs/screenshot-calendar.png';
+import SearchScreenImage from 'assets/pngs/screenshot-filtered-search.png';
+import HeroBgImage from 'assets/jpgs/map-bg.jpg';
 
 const HeaderText = styled(Text)`
   font-size: 64px;
@@ -31,12 +29,8 @@ const HeaderTextSmall = styled(Text)`
 const HeroBackground = styled(Box)`
   display: flex;
   justify-content: center;
-  background-image: url(${HeaderImage});
+  background-image: url(${HeroBgImage});
   background-size: cover;
-
-  @media (max-width: 500px) {
-    overflow: hidden;
-  }
 `;
 
 const HeroContainer = styled(Flex)`
@@ -71,12 +65,12 @@ const Hero = () => (
         </Flex>
       </Flex>
 
-      <Flex width={[1, 1, 1 / 2]} mt={[4, 4]} height={600} position="relative">
-        <Box position="absolute" ml={[-3, -3, 0]}>
-          <Image width={423} maxWidth={['90vw', '90vw']} src={ScheduleScreenImage} />
+      <Flex width={[1, 1, 1 / 2]} mt={[4, 4, 0]} mb={[0, 0, 5]} height={600} position="relative">
+        <Box position="absolute" ml={[-3, -3, 6]}>
+          <Image width={[423, 423, 500]} maxWidth={['90vw', '90vw']} src={CalendarScreenImage} />
         </Box>
-        <Box position="absolute" ml={[4, 4, 6]} mt={[4, 4, 5]}>
-          <Image width={423} maxWidth={['90vw', '90vw']} src={SearchScreenImage} />
+        <Box position="absolute" ml={[4, 4, 7]} mt={[4, 4, 5]}>
+          <Image width={[423, 423, 500]} maxWidth={['90vw', '90vw']} src={SearchScreenImage} />
         </Box>
       </Flex>
 

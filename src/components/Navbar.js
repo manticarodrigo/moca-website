@@ -31,6 +31,7 @@ const Overlay = styled(Box)`
 
 const Nav = styled(Flex)`
   z-index: 999;
+  position: relative;
   box-sizing: border-box;
   flex-direction: ${({ scrolled }) => (scrolled ? 'row' : 'column')};
   border-bottom: ${({ theme }) => theme.borders[1]};
@@ -138,13 +139,6 @@ const Link = styled(NavLink).attrs({ activeClassName: 'active' })`
   }
 `;
 
-const socialLinks = {
-  twitter: { icon: TwitterIcon, href: 'https://twitter.com/joinmoca' },
-  facebook: { icon: FacebookIcon, href: 'https://facebook.com/JoinMOCA' },
-  linkedin: { icon: LinkedinIcon, href: 'https://linkedin.com/company/joinmoca' },
-  instagram: { icon: InstagramIcon, href: 'https://instagram.com/joinmoca' },
-};
-
 const navLinks = {
   home: { title: 'Home', to: '/', exact: true },
   patients: { title: 'Patients', to: '/patients' },
@@ -155,6 +149,13 @@ const navLinks = {
   about: { title: 'About Us', to: '/about' },
 };
 
+const socialLinks = {
+  twitter: { icon: TwitterIcon, href: 'https://twitter.com/joinmoca' },
+  facebook: { icon: FacebookIcon, href: 'https://facebook.com/JoinMOCA' },
+  linkedin: { icon: LinkedinIcon, href: 'https://linkedin.com/company/joinmoca' },
+  instagram: { icon: InstagramIcon, href: 'https://instagram.com/joinmoca' },
+};
+
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -163,7 +164,7 @@ const NavBar = () => {
   return (
     <>
       {menuOpen && <Overlay onClick={toggleMenu} />}
-      <Sticky stickyClassName="foo">
+      <Sticky topOffset={50} stickyClassName="foo">
         {({ style, distanceFromTop }) => {
           const isScrolled = distanceFromTop <= -50;
 

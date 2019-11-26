@@ -41,6 +41,16 @@ const TitleText = styled(Text)`
   font-size: 44px;
 `;
 
+const ListContainer = styled(Box)`
+  box-sizing: border-box;
+`;
+
+const ListItem = styled(Box)`
+  &:not(:last-child) {
+    border-bottom: dashed 2px #DEDEDE;
+  }
+`;
+
 const QuestionText = styled(Text)`
   font-family: MuseoSansRounded-700;
   font-size: 21px;
@@ -52,17 +62,17 @@ const AnswerText = styled(Text)`
 `;
 
 const Faq = () => (
-  <Container centerMobile>
+  <Container>
     <TitleText py={4} color="primary">FAQ</TitleText>
     <Flex my={4} flexWrap="wrap">
-      <Box style={{ boxSizing: 'border-box' }} width={[1, 1, 1 / 2]} pr={[0, 0, 5]}>
+      <ListContainer width={[1, 1, 1 / 2]} pr={[0, 0, 5]}>
         {faqs.map((item) => (
-          <Box borderBottom="dashed 2px #DEDEDE" mt={3} pt={2} pb={3}>
+          <ListItem mt={3} pt={2} pb={3}>
             <QuestionText color="primary">{item.question}</QuestionText>
             <AnswerText mt={2} color="grey">{item.answers}</AnswerText>
-          </Box>
+          </ListItem>
         ))}
-      </Box>
+      </ListContainer>
       <Flex
         my={[4, 4, 0]}
         p={[0, 0, 4]}

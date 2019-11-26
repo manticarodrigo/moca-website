@@ -81,7 +81,7 @@ const Background = styled(Flex)`
 
 
 const HowItWorks = () => (
-  <Container centerMobile>
+  <Container>
     <Flex flexDirection="column" alignItems="center">
       <Title color="primary">How to Join MOCA</Title>
       <SubTitle color="grey" mt={4}>3 Easy Steps</SubTitle>

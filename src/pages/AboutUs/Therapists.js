@@ -37,7 +37,7 @@ const Background = styled(Flex)`
 
 
 const HowItWorks = () => (
-  <Container centerMobile>
+  <Container>
     <Background flexDirection="column" mt={[0, 0, 6]}>
       <Flex
         mt={[0, 0, -6]}

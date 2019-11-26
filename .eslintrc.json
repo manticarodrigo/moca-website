@@ -21,6 +21,7 @@
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
         "react/prop-types": 0,
+        "react/no-array-index-key": "off",
         "react/jsx-props-no-spreading": "off",
         "object-curly-newline": "off",
         "no-restricted-imports": [
