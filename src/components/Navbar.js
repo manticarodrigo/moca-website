@@ -201,6 +201,7 @@ const NavBar = () => {
                     py={2}
                     exact={value.exact}
                     to={value.to}
+                    onClick={menuOpen ? toggleMenu : undefined}
                   >
                     {value.title}
                   </Link>
