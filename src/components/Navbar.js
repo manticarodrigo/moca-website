@@ -5,7 +5,7 @@ import { Sticky } from 'react-sticky';
 import styled from 'styled-components/macro';
 import { space } from 'styled-system';
 
-import { Flex, Image, HyperLink, Text } from 'design-system';
+import { Box, Flex, Image, HyperLink, Text } from 'design-system';
 
 import Logo from 'assets/moca.svg';
 import { ReactComponent as HamburgerIcon } from 'assets/svgs/hamburger.svg';
@@ -15,6 +15,19 @@ import { ReactComponent as FacebookIcon } from 'assets/svgs/facebook.svg';
 import { ReactComponent as LinkedinIcon } from 'assets/svgs/linkedin.svg';
 import { ReactComponent as InstagramIcon } from 'assets/svgs/instagram.svg';
 
+const Overlay = styled(Box)`
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.75);
+
+  @media (min-width: ${({ theme }) => theme.maxWidths[7] + 1}px) {
+    display: none;
+  }
+`;
 
 const Nav = styled(Flex)`
   z-index: 999;
@@ -149,20 +162,7 @@ const NavBar = () => {
 
   return (
     <>
-      {menuOpen && (
-        <div
-          style={{
-            zIndex: 999,
-            position: 'fixed',
-            top: 0,
-            right: 0,
-            bottom: 0,
-            left: 0,
-            backgroundColor: 'rgba(0,0,0,0.75)',
-          }}
-          onClick={toggleMenu}
-        />
-      )}
+      {menuOpen && <Overlay onClick={toggleMenu} />}
       <Sticky stickyClassName="foo">
         {({ style, distanceFromTop }) => {
           const isScrolled = distanceFromTop <= -50;
@@ -176,7 +176,9 @@ const NavBar = () => {
             >
               <Flex alignItems="center">
                 <Flex p={2} justifyContent="center">
-                  <LogoImage distance={distanceFromTop} src={Logo} />
+                  <Link to="/">
+                    <LogoImage distance={distanceFromTop} src={Logo} />
+                  </Link>
                 </Flex>
               </Flex>
               <ToggleContainer onClick={toggleMenu}>
