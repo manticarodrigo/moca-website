@@ -8,9 +8,8 @@ const Wrapper = styled(Box)`
 `;
 const Placeholder = styled(Text)`
   position: absolute;
-  left: 20px;
   color: #8BA5B9;
-  transition: top 0.5s, font-size 0.5s;
+  transition: top 0.25s, left 0.25s, font-size 0.25s;
 `;
 
 const Input = styled(TextInput)`
@@ -29,7 +28,8 @@ const Input = styled(TextInput)`
 const FormField = ({ value, placeholder, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
   const labelStyle = {
-    top: isFocused ? 5 : 18,
+    top: isFocused ? 5 : 20,
+    left: isFocused ? 18 : 25,
     fontSize: isFocused ? 16 : 20,
     fontFamily: isFocused ? 'MuseoSansRounded-300' : 'MuseoSansRounded-500',
   };
