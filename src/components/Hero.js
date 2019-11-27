@@ -3,8 +3,6 @@ import styled from 'styled-components/macro';
 
 import { Flex, Text } from 'design-system';
 
-import HeroBgImage from 'assets/jpgs/patient-hero-bg.jpg';
-
 const HeaderText = styled(Text)`
   font-size: 44px;
   font-family: MuseoSansRounded-900; 
@@ -30,7 +28,7 @@ const HeroContainer = styled(Flex)`
   display: flex;
   justify-content: center;
   background-color: #e7eff9;
-  background-image: url(${HeroBgImage});
+  background-image: url(${({ bgImage }) => bgImage});
   background-size: 55%;
   background-position: center right;
   background-repeat: no-repeat;
@@ -68,24 +66,12 @@ const TextContainer = styled(Flex)`
   }
 `;
 
-const Hero = () => (
-  <HeroContainer>
+const Hero = ({ image, title, description }) => (
+  <HeroContainer bgImage={image}>
     <HeroInner py={5} px={[3, 4, 5]} maxWidth={1350} width={1}>
       <TextContainer py={4} px={[2, 3, 5]} maxWidth={450}>
-        <HeaderText color="primaryDark">
-          REGAIN CONTROL OF YOUR
-          {' '}
-          <span style={{ color: '#71cfeb' }}>SCHEDULE</span>
-          .
-        </HeaderText>
-        <HeaderTextSmall color="grey">
-          Our Physical Therapists tailor your experience by offering
-          {' '}
-          <span style={{ fontFamily: 'MuseoSansRounded-900' }}>personalized treatments</span>
-          {' '}
-          in your ideal environment. Regain control of your schedule while prioritizing your health
-          among personal and professional demands.
-        </HeaderTextSmall>
+        <HeaderText color="primaryDark">{title}</HeaderText>
+        <HeaderTextSmall color="grey">{description}</HeaderTextSmall>
       </TextContainer>
     </HeroInner>
   </HeroContainer>

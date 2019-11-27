@@ -1,5 +1,7 @@
 import React from 'react';
 
+import HeroBgImage from 'assets/jpgs/patient-hero-bg.jpg';
+
 import { ReactComponent as AddressIcon } from 'assets/svgs/address.svg';
 import { ReactComponent as CostIcon } from 'assets/svgs/cost.svg';
 import { ReactComponent as MedicalDocumentsIcon } from 'assets/svgs/medical-document.svg';
@@ -14,13 +16,33 @@ import FilterScreenImage from 'assets/pngs/screenshot-filters.png';
 import AppointmentRequestScreenImage from 'assets/pngs/screenshot-appointment-request.png';
 import PaymentsScreenImage from 'assets/pngs/screenshot-payments.png';
 
+import Hero from 'components/Hero';
 import OnboardingSteps from 'components/OnboardingSteps';
 import PricingInfo from 'components/PricingInfo';
 import FeatureGrid from 'components/FeatureGrid';
 
 // import ReviewsSection from 'components/ReviewsSection';
-import Hero from './Hero';
 import ContactUS from '../Home/ContactUs';
+
+const heroTitle = (
+  <>
+    REGAIN CONTROL OF YOUR
+    {' '}
+    <span style={{ color: '#71cfeb' }}>SCHEDULE</span>
+    .
+  </>
+);
+
+const heroDescription = (
+  <>
+    Our Physical Therapists tailor your experience by offering
+    {' '}
+    <span style={{ fontFamily: 'MuseoSansRounded-900' }}>personalized treatments</span>
+    {' '}
+    in your ideal environment. Regain control of your schedule while prioritizing your health
+    among personal and professional demands.
+  </>
+);
 
 const features = {
   location: {
@@ -88,7 +110,7 @@ const pricingInfoProps = {
 
 const PatientsScreen = () => (
   <>
-    <Hero />
+    <Hero image={HeroBgImage} title={heroTitle} description={heroDescription} />
     <FeatureGrid {...featureGridProps} />
     <PricingInfo {...pricingInfoProps} />
     <OnboardingSteps steps={steps} />
