@@ -11,10 +11,10 @@ import { ReactComponent as ScheduleIcon } from 'assets/svgs/schedule.svg';
 import { ReactComponent as TimeIntervalsIcon } from 'assets/svgs/time-intervals.svg';
 import { ReactComponent as WaitingIcon } from 'assets/svgs/waiting.svg';
 
+import PaymentsScreenImage from 'assets/pngs/screenshot-payments.png';
 import RegistrationScreenImage from 'assets/pngs/screenshot-registration-success.png';
 import FilterScreenImage from 'assets/pngs/screenshot-filters.png';
 import AppointmentRequestScreenImage from 'assets/pngs/screenshot-appointment-request.png';
-import PaymentsScreenImage from 'assets/pngs/screenshot-payments.png';
 
 import Hero from 'components/Hero';
 import OnboardingSteps from 'components/OnboardingSteps';
