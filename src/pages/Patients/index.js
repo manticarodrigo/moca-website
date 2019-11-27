@@ -20,9 +20,9 @@ import Hero from 'components/Hero';
 import OnboardingSteps from 'components/OnboardingSteps';
 import PricingInfo from 'components/PricingInfo';
 import FeatureGrid from 'components/FeatureGrid';
+import FooterForm from 'components/FooterForm';
 
 // import ReviewsSection from 'components/ReviewsSection';
-import ContactUS from '../Home/ContactUs';
 
 const heroTitle = (
   <>
@@ -115,7 +115,7 @@ const PatientsScreen = () => (
     <PricingInfo {...pricingInfoProps} />
     <OnboardingSteps steps={steps} />
     {/* <ReviewsSection /> */}
-    <ContactUS />
+    <FooterForm />
   </>
 );
 

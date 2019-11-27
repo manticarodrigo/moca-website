@@ -1,11 +1,12 @@
 import React from 'react';
 
+import FooterForm from 'components/FooterForm';
+
 import Hero from './Hero';
 import FeaturesSection from './FeaturesSection';
 import PricingSection from './PricingSection';
 import PaymentSection from './PaymentSection';
 import HowItWorks from './HowItWorks';
-import ContactUs from '../Home/ContactUs';
 
 const TherapistsScreen = () => (
   <>
@@ -14,7 +15,7 @@ const TherapistsScreen = () => (
     <PricingSection />
     <PaymentSection />
     <HowItWorks />
-    <ContactUs />
+    <FooterForm />
   </>
 );
 

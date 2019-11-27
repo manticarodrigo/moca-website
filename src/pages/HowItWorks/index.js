@@ -3,7 +3,8 @@ import React from 'react';
 import MocaSection from 'components/MocaSection';
 import MocaWaySection from 'components/MocaWaySection';
 import ReviewsSection from 'components/ReviewsSection';
-import ContactUs from '../Home/ContactUs';
+import FooterForm from 'components/FooterForm';
+
 import Hero from './Hero';
 
 const HowItWorksScreen = () => (
@@ -12,7 +13,7 @@ const HowItWorksScreen = () => (
     <MocaSection />
     <MocaWaySection />
     <ReviewsSection />
-    <ContactUs />
+    <FooterForm />
   </>
 );
 
