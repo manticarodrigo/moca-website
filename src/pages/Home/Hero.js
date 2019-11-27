@@ -66,10 +66,10 @@ const Hero = () => (
       </Flex>
 
       <Flex width={[1, 1, 1 / 2]} mt={[4, 4, 0]} mb={[0, 0, 5]} height={600} position="relative">
-        <Box position="absolute" ml={[-3, -3, 6]}>
+        <Box position="absolute" ml={[-3, -3, 5]}>
           <Image width={[423, 423, 500]} maxWidth={['90vw', '90vw']} src={CalendarScreenImage} />
         </Box>
-        <Box position="absolute" ml={[4, 4, 7]} mt={[4, 4, 5]}>
+        <Box position="absolute" ml={[4, 4, 6]} mt={[4, 4, 5]}>
           <Image width={[423, 423, 500]} maxWidth={['90vw', '90vw']} src={SearchScreenImage} />
         </Box>
       </Flex>
