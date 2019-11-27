@@ -27,12 +27,13 @@ const HeroContainer = styled(Flex)`
   position: relative;
   display: flex;
   justify-content: center;
-  background-color: #e7eff9;
+  background-color: ${({ bgColor }) => bgColor || '#e7eff9'};
   background-image: url(${({ bgImage }) => bgImage});
-  background-size: 55%;
-  background-position: center right;
+  background-size: auto 100%;
+  background-position: right center;
   background-repeat: no-repeat;
 
+  
   @media (max-width: ${({ theme }) => theme.maxWidths[7]}px) {
     background-size: cover;
 
@@ -66,12 +67,12 @@ const TextContainer = styled(Flex)`
   }
 `;
 
-const Hero = ({ image, title, description }) => (
-  <HeroContainer bgImage={image}>
-    <HeroInner py={5} px={[3, 4, 5]} maxWidth={1350} width={1}>
-      <TextContainer py={4} px={[2, 3, 5]} maxWidth={450}>
+const Hero = ({ bgImage, bgColor, title, description, textMaxWidth = 450 }) => (
+  <HeroContainer bgImage={bgImage} bgColor={bgColor}>
+    <HeroInner py={6} px={[3, 4, 5]} maxWidth={1350} width={1}>
+      <TextContainer py={4} px={[2, 3, 5]} maxWidth={textMaxWidth}>
         <HeaderText color="primaryDark">{title}</HeaderText>
-        <HeaderTextSmall color="grey">{description}</HeaderTextSmall>
+        <HeaderTextSmall mt={4} color="grey">{description}</HeaderTextSmall>
       </TextContainer>
     </HeroInner>
   </HeroContainer>

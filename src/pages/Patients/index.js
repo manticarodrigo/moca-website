@@ -110,7 +110,7 @@ const pricingInfoProps = {
 
 const PatientsScreen = () => (
   <>
-    <Hero image={HeroBgImage} title={heroTitle} description={heroDescription} />
+    <Hero bgImage={HeroBgImage} title={heroTitle} description={heroDescription} />
     <FeatureGrid {...featureGridProps} />
     <PricingInfo {...pricingInfoProps} />
     <OnboardingSteps steps={steps} />
