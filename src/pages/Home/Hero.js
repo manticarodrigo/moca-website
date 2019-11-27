@@ -26,20 +26,20 @@ const HeaderTextSmall = styled(Text)`
   }
 `;
 
-const HeroBackground = styled(Box)`
+const HeroContainer = styled(Box)`
   display: flex;
   justify-content: center;
   background-image: url(${HeroBgImage});
   background-size: cover;
 `;
 
-const HeroContainer = styled(Flex)`
+const HeroInner = styled(Flex)`
   box-sizing: border-box;
 `;
 
 const Hero = () => (
-  <HeroBackground>
-    <HeroContainer py={5} px={[3, 4, 5]} flexWrap="wrap" maxWidth={1350} width={1}>
+  <HeroContainer>
+    <HeroInner py={5} px={[3, 4, 5]} flexWrap="wrap" maxWidth={1350} width={1}>
       <Flex flex={1} width={[1, 1, 1 / 2]}>
         <Flex flexDirection="column" alignItems="start">
           <Image width={[80, 80, 117]} src={AppLogo} />
@@ -74,8 +74,8 @@ const Hero = () => (
         </Box>
       </Flex>
 
-    </HeroContainer>
-  </HeroBackground>
+    </HeroInner>
+  </HeroContainer>
 );
 
 export default Hero;

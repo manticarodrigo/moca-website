@@ -5,9 +5,7 @@ import ReliableImage from 'assets/reliable.svg';
 import HasselFreeImage from 'assets/hassle.svg';
 import PersonImage from 'assets/person.svg';
 
-import {
-  Image, Text, Flex, Box,
-} from 'design-system';
+import { Image, Text, Flex, Box } from 'design-system';
 
 import Container from 'components/Container';
 
