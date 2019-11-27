@@ -89,14 +89,14 @@ const List = styled.ul`
 `;
 
 
-const JoinMocaSection = ({ sections }) => (
+const OnboardingSteps = ({ steps }) => (
   <Container>
     <Flex flexDirection="column" alignItems="center" width="100%">
       <Title color="primary">How to Join MOCA</Title>
       <Subtitle color="grey" mt={4}>3 Easy Steps</Subtitle>
     </Flex>
     <Background flexDirection="column" mt={[2, 2, 7]}>
-      {Object.entries(sections).map(([key, value], index) => (
+      {Object.entries(steps).map(([key, value], index) => (
         <SectionContainer key={key} justifyContent="center" flexWrap="wrap" mb={5}>
           <Flex
             mt={[2, 2, -6]}
@@ -135,4 +135,4 @@ const JoinMocaSection = ({ sections }) => (
   </Container>
 );
 
-export default React.memo(JoinMocaSection);
+export default React.memo(OnboardingSteps);

@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import PaymentsScreenImage from 'assets/pngs/screenshot-payments.png';
+import { Flex, Text } from 'design-system';
 
 import Container from 'components/Container';
+import Image from 'components/Image';
 
-import { Flex, Text, Image } from 'design-system';
 
 const HeaderText = styled(Text)`
   font-size: 44px;
@@ -68,30 +68,16 @@ const CardContainer = styled(Flex)`
   flex-wrap: wrap;
 `;
 
-const MobileImage = styled(Image)`
-  max-width: 100%;
-  object-fit: contain;
-`;
-
 const priceRange = [
-  {
-    price: 50,
-    sessionDuration: '30 minutes treatment',
-  },
-  {
-    price: 70,
-    sessionDuration: '45 minutes treatment',
-  },
-  {
-    price: 100,
-    sessionDuration: '60 minutes treatment',
-  },
+  { price: 50, sessionDuration: '30 minute treatment' },
+  { price: 70, sessionDuration: '45 minute treatment' },
+  { price: 100, sessionDuration: '60 minute treatment' },
 ];
 
-const PricingSection = () => (
+const PricingInfo = ({ image, description }) => (
   <Container bg="lighterBlue" py={5}>
     <ImageContainer width={[1, 1, 1, 1 / 2]}>
-      <MobileImage src={PaymentsScreenImage} />
+      <Image contain src={image} />
     </ImageContainer>
     <TextContainer width={[1, 1, 1, 1 / 2]} flexDirection="column" pl={[0, 0, 4]}>
       <HeaderText color="primary">
@@ -105,12 +91,7 @@ const PricingSection = () => (
         {' '}
         DRIVEN MARKET.
       </HeaderText>
-      <DescriptionText color="grey">
-        We intend for this market-driven platform to decrease your overall cost of care.
-        We will stream-line your experience by removing unnecessary steps and paperwork
-        that comes with insurance companies. This is why MOCA selects cash-based services
-        by accepting all major credit or banking cards.
-      </DescriptionText>
+      <DescriptionText color="grey">{description}</DescriptionText>
       <SmallTitleText color="primaryDark">
         Average pricing ranges:
       </SmallTitleText>
@@ -129,4 +110,4 @@ const PricingSection = () => (
   </Container>
 );
 
-export default PricingSection;
+export default PricingInfo;
