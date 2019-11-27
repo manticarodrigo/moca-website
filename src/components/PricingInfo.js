@@ -47,6 +47,19 @@ const SessionDurationText = styled(Text)`
   padding: 6px;
 `;
 
+const SubText = styled(Text)`
+  font-size: 19px;
+  font-family: MuseoSansRounded-500;
+
+  min-width: 100px;
+  max-width: 600px;
+
+
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
+`;
+
 const PriceCard = styled(Flex)`
   flex-direction: column;
   align-items: center;
@@ -74,7 +87,7 @@ const priceRange = [
   { price: 100, sessionDuration: '60 minute treatment' },
 ];
 
-const PricingInfo = ({ image, description }) => (
+const PricingInfo = ({ image, description, subText }) => (
   <Container bg="lighterBlue" py={5}>
     <ImageContainer width={[1, 1, 1, 1 / 2]}>
       <Image contain src={image} />
@@ -106,6 +119,15 @@ const PricingInfo = ({ image, description }) => (
           </PriceCard>
         ))}
       </CardContainer>
+      {subText && (
+        <SubText
+          mt={4}
+          color="grey"
+          textAlign={['center', 'center', 'left']}
+        >
+          {subText}
+        </SubText>
+      )}
     </TextContainer>
   </Container>
 );

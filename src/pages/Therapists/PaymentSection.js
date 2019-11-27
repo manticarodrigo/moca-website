@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
+import { Flex, Text } from 'design-system';
+
 import CashImage from 'assets/cash.svg';
 import TimeImage from 'assets/time.svg';
 import TransactionImage from 'assets/trans.svg';
 import PaymentImage from 'assets/payment-image.png';
 
-
-import {
-  Flex, Text, Image,
-} from 'design-system';
+import Image from 'components/Image';
 
 
 const Title = styled(Text)`
@@ -30,7 +29,7 @@ const Description = styled(Text)`
 
 
 const PaymentSection = () => (
-  <Flex flexWrap="wrap" bg="#f2f2f2">
+  <Flex alignItems="center" flexWrap="wrap" bg="#f2f2f2">
     <Flex
       flexDirection="column"
       width={[1, 1, 1 / 2]}
@@ -90,6 +89,7 @@ const PaymentSection = () => (
       mt={[4, 4, 0]}
     >
       <Image
+        contain
         width="100%"
         height="100%"
         src={PaymentImage}
