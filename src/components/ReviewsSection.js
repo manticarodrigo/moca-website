@@ -69,8 +69,8 @@ const ReviewsSection = () => {
   return (
     <MainContainer>
       <Slider>
-        {reviews.map((item) => (
-          <ReviewContainer>
+        {reviews.map((item, index) => (
+          <ReviewContainer key={index}>
             <Flex>
               <Rating>{item.rating}</Rating>
             </Flex>

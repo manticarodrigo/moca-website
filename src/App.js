@@ -6,10 +6,10 @@ import { ThemeProvider } from 'styled-components/macro';
 import { theme } from './design-system';
 import Navbar from './components/Navbar';
 import HomePage from './pages/Home';
-import PatientPage from './pages/Patient';
+import PatientsPage from './pages/Patients';
+import TherapistsPage from './pages/Therapists';
 import FaqPage from './pages/Faq';
 import HowItWorksPage from './pages/HowItWorks';
-import TherapistPage from './pages/Therapist';
 import AboutUsPage from './pages/AboutUs';
 import ContactUs from './pages/Home/ContactUs';
 
@@ -28,8 +28,8 @@ const App = () => (
   <AppLayout>
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route exact path="/patients" component={PatientPage} />
-      <Route exact path="/therapists" component={TherapistPage} />
+      <Route exact path="/patients" component={PatientsPage} />
+      <Route exact path="/therapists" component={TherapistsPage} />
       <Route exact path="/how-it-works" component={HowItWorksPage} />
       <Route exact path="/faq" component={FaqPage} />
       <Route exact path="/contact" component={ContactUs} />

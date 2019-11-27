@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 
-import PricingScreenImage from 'assets/phone-pricing.png';
+import PaymentsScreenImage from 'assets/pngs/screenshot-payments.png';
 
 import Container from 'components/Container';
 
@@ -50,42 +50,27 @@ const SessionDurationText = styled(Text)`
 const PriceCard = styled(Flex)`
   flex-direction: column;
   align-items: center;
-  box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
   border-radius: 10px;
-  padding: 27px;
-  margin: 24px;
-  background-color: #ffffff;
-  height: 100px;
   width: 100px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 15px 0 rgba(7, 42, 68, 0.1);
 `;
 
 const ImageContainer = styled(Flex)`
   box-sizing: border-box;
-
-  @media (max-width: 500px) {
-    width: 100%;
-  }
 `;
 
 const TextContainer = styled(Flex)`
   box-sizing: border-box;
-
-  @media (max-width: 500px) {
-    padding: 15px;
-  }
 `;
 
 const CardContainer = styled(Flex)`
-  @media (max-width: 500px) {
-    flex-direction: column;
-    align-items: center;
-  }
+  flex-wrap: wrap;
 `;
 
 const MobileImage = styled(Image)`
-  @media (max-width: 500px) {
-    width: 370px;
-  }
+  max-width: 100%;
+  object-fit: contain;
 `;
 
 const priceRange = [
@@ -104,11 +89,11 @@ const priceRange = [
 ];
 
 const PricingSection = () => (
-  <Container bg="lighterBlue">
-    <ImageContainer width={[1 / 2]}>
-      <MobileImage src={PricingScreenImage} />
+  <Container bg="lighterBlue" py={5}>
+    <ImageContainer width={[1, 1, 1, 1 / 2]}>
+      <MobileImage src={PaymentsScreenImage} />
     </ImageContainer>
-    <TextContainer width={[1 / 2]} flexDirection="column" p={50}>
+    <TextContainer width={[1, 1, 1, 1 / 2]} flexDirection="column" pl={[0, 0, 4]}>
       <HeaderText color="primary">
         PROVIDING A
         {' '}
@@ -129,9 +114,9 @@ const PricingSection = () => (
       <SmallTitleText color="primaryDark">
         Average pricing ranges:
       </SmallTitleText>
-      <CardContainer>
-        {priceRange.map((range) => (
-          <PriceCard>
+      <CardContainer pt={3}>
+        {priceRange.map((range, index) => (
+          <PriceCard key={index} p={4} mr={2} mb={2}>
             <PriceText color="secondaryLight">
               $
               {range.price}

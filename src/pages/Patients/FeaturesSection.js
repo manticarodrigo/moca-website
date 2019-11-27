@@ -83,8 +83,8 @@ const FeaturesSection = () => (
         Empowering our patients on their road to improvement
       </TitleText>
       <Flex justifyContent="center" pt={5} flexWrap="wrap">
-        {features.map((feature) => (
-          <FeatureCard m={3} px={4} pt={5} pb={3}>
+        {features.map((feature, index) => (
+          <FeatureCard key={index} m={3} px={4} pt={5} pb={3}>
             {feature.icon}
             <CardDescription color="grey" pt={30}>{feature.description}</CardDescription>
           </FeatureCard>

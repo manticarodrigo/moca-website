@@ -7,7 +7,7 @@ import PaymentSection from './PaymentSection';
 import HowItWorks from './HowItWorks';
 import ContactUs from '../Home/ContactUs';
 
-const TherapistScreen = () => (
+const TherapistsScreen = () => (
   <>
     <Hero />
     <FeaturesSection />
@@ -18,4 +18,4 @@ const TherapistScreen = () => (
   </>
 );
 
-export default TherapistScreen;
+export default TherapistsScreen;
