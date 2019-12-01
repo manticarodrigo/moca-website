@@ -7,7 +7,7 @@ import mailchimp from 'constants/mailchimp';
 
 import ContactUsImg from 'assets/contactUsSection.png';
 
-import { Flex, Text } from 'design-system';
+import { Flex, Text, HyperLink } from 'design-system';
 
 import Container from 'components/Container';
 import FormField from 'components/FormField';
@@ -108,7 +108,7 @@ const ContactForm = ({ onSubmit }) => {
   );
 };
 
-const ContactUs = () => (
+const ContactUs = ({ alt }) => (
   <Container background={`url(${ContactUsImg})`}>
     <Flex
       style={{ boxSizing: 'border-box' }}
@@ -117,15 +117,23 @@ const ContactUs = () => (
       pr={[0, 0, 5]}
       width={[1, 1, 1 / 2]}
     >
-      <TitleText py={1} color="primary"> Want to help bring MOCA to your area? </TitleText>
+      <TitleText py={1} color="primary">
+        {alt ? 'NEED TO CONTACT THE MOCA TEAM?' : 'Want to help bring MOCA to your area?'}
+      </TitleText>
       <DescriptionText color="primary" pt={4}>
-        We are looking to build a coalition of professionals and patients to transform the
-        healthcare industry.
-        And we want you to be part of this vision.
-      </DescriptionText>
-
-      <DescriptionText color="primary" pt={4}>
-      Leave your contact information below and become a MOCA cohort leader for your area.
+        {alt
+          ? (
+            <>
+              Email us at
+              {' '}
+              <HyperLink color="primary" target="_blank" rel="noopener noreferrer" href="mailto:hello@joinmoca.com">
+                hello@joinmoca.com
+              </HyperLink>
+              {' '}
+              or complete the contact form.
+            </>
+          )
+          : 'We are looking to build a coalition of professionals and patients to transform the healthcare industry. And we want you to be part of this vision.\n\nLeave your contact information below and become a MOCA cohort leader for your area.'}
       </DescriptionText>
     </Flex>
 

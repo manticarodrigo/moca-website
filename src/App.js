@@ -10,8 +10,8 @@ import PatientsPage from './pages/Patients';
 import TherapistsPage from './pages/Therapists';
 import FaqPage from './pages/Faq';
 import HowItWorksPage from './pages/HowItWorks';
-import AboutUsPage from './pages/AboutUs';
-import ContactForm from './components/ContactForm';
+import AboutPage from './pages/About';
+import ContactPage from './pages/Contact';
 
 const AppLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -32,8 +32,8 @@ const App = () => (
       <Route exact path="/therapists" component={TherapistsPage} />
       <Route exact path="/how-it-works" component={HowItWorksPage} />
       <Route exact path="/faq" component={FaqPage} />
-      <Route exact path="/contact" component={ContactForm} />
-      <Route exact path="/about" component={AboutUsPage} />
+      <Route exact path="/contact" component={ContactPage} />
+      <Route exact path="/about" component={AboutPage} />
     </Switch>
   </AppLayout>
 );
