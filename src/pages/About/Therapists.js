@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components/macro';
 
 import Container from 'components/Container';
-import BackgroundTherapist from 'assets/background-therapist.svg';
+import IconBgImage from 'assets/svgs/icon-bg.svg';
 
 
 import { Flex, Text } from 'design-system';
@@ -30,7 +30,7 @@ const Background = styled(Flex)`
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-image: url(${BackgroundTherapist});
+  background-image: url(${IconBgImage});
   background-repeat: no-repeat;
 
 `;

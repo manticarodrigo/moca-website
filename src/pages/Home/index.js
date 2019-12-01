@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-import AppLogo from 'assets/App-icon.svg';
+import AppIconImage from 'assets/svgs/app-icon.svg';
 import CalendarScreenImage from 'assets/pngs/screenshot-calendar.png';
 import SearchScreenImage from 'assets/pngs/screenshot-filtered-search.png';
 import HeroBgImage from 'assets/jpgs/map-bg.jpg';
@@ -30,7 +30,7 @@ const HomeScreen = () => (
   <>
     <TwoColumnHero
       bgImage={HeroBgImage}
-      leftImage={AppLogo}
+      leftImage={AppIconImage}
       title={heroTitle}
       description={heroDescription}
       rightBackImage={CalendarScreenImage}

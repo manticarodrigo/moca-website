@@ -67,12 +67,26 @@ const TextContainer = styled(Flex)`
   }
 `;
 
-const Hero = ({ bgImage, bgColor, title, description, textMaxWidth = 450 }) => (
+const Hero = ({
+  bgImage,
+  bgColor,
+  title,
+  description,
+  title2,
+  description2,
+  textMaxWidth = 450,
+}) => (
   <HeroContainer bgImage={bgImage} bgColor={bgColor}>
     <HeroInner py={6} px={[3, 4, 5]} maxWidth={1350} width={1}>
       <TextContainer py={4} px={[2, 3, 5]} maxWidth={textMaxWidth}>
         <HeaderText color="primaryDark">{title}</HeaderText>
         <HeaderTextSmall mt={4} color="grey">{description}</HeaderTextSmall>
+        {!!(title2 && description2) && (
+          <>
+            <HeaderText color="primaryDark">{title2}</HeaderText>
+            <HeaderTextSmall mt={4} color="grey">{description2}</HeaderTextSmall>
+          </>
+        )}
       </TextContainer>
     </HeroInner>
   </HeroContainer>

@@ -5,7 +5,7 @@ import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 import mailchimp from 'constants/mailchimp';
 
-import ContactUsImg from 'assets/contactUsSection.png';
+import ContactBgImage from 'assets/jpgs/contact-form-bg.jpg';
 
 import { Flex, Text, HyperLink } from 'design-system';
 
@@ -109,7 +109,7 @@ const ContactForm = ({ onSubmit }) => {
 };
 
 const ContactUs = ({ alt }) => (
-  <Container background={`url(${ContactUsImg})`}>
+  <Container background={`url(${ContactBgImage})`}>
     <Flex
       style={{ boxSizing: 'border-box' }}
       flexDirection="column"
