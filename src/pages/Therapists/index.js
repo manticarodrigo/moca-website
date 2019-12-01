@@ -20,7 +20,7 @@ import FeatureGrid from 'components/FeatureGrid';
 import PricingInfo from 'components/PricingInfo';
 import OnboardingSteps from 'components/OnboardingSteps';
 import Alert from 'components/Alert';
-import FooterForm from 'components/FooterForm';
+import ContactForm from 'components/ContactForm';
 
 import PaymentSection from './PaymentSection';
 
@@ -112,7 +112,7 @@ const TherapistsScreen = () => (
     <PaymentSection />
     <OnboardingSteps steps={steps} />
     <Alert {...alertProps} />
-    <FooterForm />
+    <ContactForm />
   </>
 );
 

@@ -6,7 +6,7 @@ import Hero from 'components/Hero';
 import MocaSection from 'components/MocaSection';
 import MocaWaySection from 'components/MocaWaySection';
 // import ReviewsSection from 'components/ReviewsSection';
-import FooterForm from 'components/FooterForm';
+import ContactForm from 'components/ContactForm';
 
 // import Hero from './Hero';
 
@@ -33,7 +33,7 @@ const HowItWorksScreen = () => (
     <MocaSection />
     <MocaWaySection />
     {/* <ReviewsSection /> */}
-    <FooterForm />
+    <ContactForm />
   </>
 );
 

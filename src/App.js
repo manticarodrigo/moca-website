@@ -11,7 +11,7 @@ import TherapistsPage from './pages/Therapists';
 import FaqPage from './pages/Faq';
 import HowItWorksPage from './pages/HowItWorks';
 import AboutUsPage from './pages/AboutUs';
-import FooterForm from './components/FooterForm';
+import ContactForm from './components/ContactForm';
 
 const AppLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -32,7 +32,7 @@ const App = () => (
       <Route exact path="/therapists" component={TherapistsPage} />
       <Route exact path="/how-it-works" component={HowItWorksPage} />
       <Route exact path="/faq" component={FaqPage} />
-      <Route exact path="/contact" component={FooterForm} />
+      <Route exact path="/contact" component={ContactForm} />
       <Route exact path="/about" component={AboutUsPage} />
     </Switch>
   </AppLayout>

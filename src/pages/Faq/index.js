@@ -5,7 +5,7 @@ import ConversationScreenImage from 'assets/pngs/screenshot-conversation.png';
 import HeroBgImage from 'assets/jpgs/map-bg.jpg';
 
 import TwoColumnHero from 'components/TwoColumnHero';
-import Contact from 'components/Contact';
+import EmailForm from 'components/EmailForm';
 import FaqList from 'components/Faq';
 
 const heroTitle = (
@@ -30,7 +30,7 @@ const Faq = () => (
     />
     <FaqList />
     <FaqList alt />
-    <Contact />
+    <EmailForm />
   </>
 );
 

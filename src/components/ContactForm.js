@@ -3,12 +3,15 @@ import styled from 'styled-components/macro';
 import { space } from 'styled-system';
 import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
+import mailchimp from 'constants/mailchimp';
+
 import ContactUsImg from 'assets/contactUsSection.png';
 
 import { Flex, Text } from 'design-system';
 
 import Container from 'components/Container';
 import FormField from 'components/FormField';
+import MailchimpStatus from 'components/MailchimpStatus';
 
 const TitleText = styled(Text)`
   font-family: MuseoSansRounded-900;
@@ -54,10 +57,6 @@ const Send = styled.button`
   text-align: center;
   color: #ffffff;
 `;
-
-const formU = '375703606cc64c20b725b1215';
-const formId = '1f0b163534';
-const formUrl = `https://approdite.us20.list-manage.com/subscribe/post?u=${formU}&id=${formId}`;
 
 const ContactForm = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -126,20 +125,11 @@ const ContactUs = () => (
 
     <Flex style={{ boxSizing: 'border-box' }} width={[1, 1, 1 / 2]} my={[4, 4, 0]}>
       <MailchimpSubscribe
-        url={formUrl}
+        url={mailchimp.formUrl}
         render={({ subscribe, status, message }) => (
           <Card pt={5} px={4} pb={4} flexDirection="column">
             <ContactForm onSubmit={(data) => subscribe(data)} />
-            <Flex justifyContent="center" mt={2}>
-              {status === 'sending' && <div style={{ color: 'blue' }}>sending...</div>}
-              {status === 'error' && (
-              <div
-                style={{ color: 'red' }}
-                dangerouslySetInnerHTML={{ __html: message }}
-              />
-              )}
-              {status === 'success' && <div style={{ color: 'green' }}>Subscribed !</div>}
-            </Flex>
+            <MailchimpStatus status={status} message={message} />
           </Card>
         )}
       />

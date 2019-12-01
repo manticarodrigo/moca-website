@@ -10,7 +10,7 @@ import TwoColumnHero from 'components/TwoColumnHero';
 import MocaSection from 'components/MocaSection';
 import Faq from 'components/Faq';
 import MocaWaySection from 'components/MocaWaySection';
-import FooterForm from 'components/FooterForm';
+import ContactForm from 'components/ContactForm';
 
 import FeaturesSection from './FeaturesSection';
 
@@ -40,7 +40,7 @@ const HomeScreen = () => (
     <MocaSection />
     <MocaWaySection />
     <Faq />
-    <FooterForm />
+    <ContactForm />
   </>
 );
 

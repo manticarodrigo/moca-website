@@ -1,10 +1,12 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import styled from 'styled-components/macro';
+import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
-import {
-  Flex, TextInput, Text,
-} from 'design-system';
+import mailchimp from 'constants/mailchimp';
+
+import { Flex, TextInput, Text } from 'design-system';
+
+import MailchimpStatus from 'components/MailchimpStatus';
 
 const MainContainer = styled(Flex)`
   background-color: #f6fdff;
@@ -100,19 +102,36 @@ const Button = styled.button`
   text-align: center;
 `;
 
-const Contact = () => (
-  <MainContainer py={100} px={150}>
-    <SubContainer>
-      <HeaderText>Want more information before getting started?</HeaderText>
-      <SubHeaderText>
-        Leave your contact information below and a MOCA specialist will contact you directly.
-      </SubHeaderText>
-      <EmailContainer m={40}>
-        <EmailField placeholder="Email Address" />
-        <Button>Send</Button>
-      </EmailContainer>
-    </SubContainer>
-  </MainContainer>
-);
+const EmailForm = () => {
+  const [formData, setFormData] = useState({ EMAIL: '' });
 
-export default Contact;
+  const onChangeField = (key) => ({ currentTarget }) => setFormData((prev) => ({
+    ...prev,
+    [key]: currentTarget.value,
+  }));
+
+  return (
+    <MainContainer py={100} px={150}>
+      <SubContainer>
+        <HeaderText>Want more information before getting started?</HeaderText>
+        <SubHeaderText>
+          Leave your contact information below and a MOCA specialist will contact you directly.
+        </SubHeaderText>
+        <MailchimpSubscribe
+          url={mailchimp.formUrl}
+          render={({ subscribe, status, message }) => (
+            <>
+              <EmailContainer m={40}>
+                <EmailField placeholder="Email Address" onChange={onChangeField('EMAIL')} />
+                <Button onClick={() => subscribe(formData)}>Send</Button>
+              </EmailContainer>
+              <MailchimpStatus status={status} message={message} />
+            </>
+          )}
+        />
+      </SubContainer>
+    </MainContainer>
+  );
+};
+
+export default EmailForm;
