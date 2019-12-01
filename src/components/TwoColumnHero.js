@@ -3,11 +3,6 @@ import styled from 'styled-components/macro';
 
 import { Box, Flex, Image, Text } from 'design-system';
 
-import AppLogo from 'assets/App-icon.svg';
-import CalendarScreenImage from 'assets/pngs/screenshot-calendar.png';
-import SearchScreenImage from 'assets/pngs/screenshot-filtered-search.png';
-import HeroBgImage from 'assets/jpgs/map-bg.jpg';
-
 const HeaderText = styled(Text)`
   font-size: 64px;
   font-family: MuseoSansRounded-900; 
@@ -29,7 +24,7 @@ const HeaderTextSmall = styled(Text)`
 const HeroContainer = styled(Box)`
   display: flex;
   justify-content: center;
-  background-image: url(${HeroBgImage});
+  background-image: url(${({ bgImage }) => bgImage});
   background-size: cover;
 `;
 
@@ -37,21 +32,17 @@ const HeroInner = styled(Flex)`
   box-sizing: border-box;
 `;
 
-const Hero = () => (
-  <HeroContainer>
+const Hero = ({ bgImage, leftImage, title, description, rightBackImage, rightFrontImage }) => (
+  <HeroContainer bgImage={bgImage}>
     <HeroInner py={5} px={[3, 4, 5]} flexWrap="wrap" maxWidth={1350} width={1}>
       <Flex flex={1} width={[1, 1, 1 / 2]}>
         <Flex flexDirection="column" alignItems="start">
-          <Image width={[80, 80, 117]} src={AppLogo} />
+          {leftImage && <Image width={[80, 80, 117]} src={leftImage} />}
           <HeaderText color="primary" mt={4}>
-            PHYSICAL THERAPY
-            {' '}
-            <span style={{ color: '#71cfeb' }}>DELIVERED</span>
-            {' '}
-            TO YOU
+            {title}
           </HeaderText>
           <HeaderTextSmall color="primary" mt={4}>
-            Available soon in Salt Lake City and surrounding areas.
+            {description}
           </HeaderTextSmall>
 
           {/* <Flex width={1} pt={6}>
@@ -67,10 +58,10 @@ const Hero = () => (
 
       <Flex width={[1, 1, 1 / 2]} mt={[4, 4, 0]} mb={[0, 0, 5]} height={600} position="relative">
         <Box position="absolute" ml={[-3, -3, 5]}>
-          <Image width={[423, 423, 500]} maxWidth={['90vw', '90vw']} src={CalendarScreenImage} />
+          <Image width={[423, 423, 500]} maxWidth={['90vw', '90vw']} src={rightBackImage} />
         </Box>
         <Box position="absolute" ml={[4, 4, 6]} mt={[4, 4, 5]}>
-          <Image width={[423, 423, 500]} maxWidth={['90vw', '90vw']} src={SearchScreenImage} />
+          <Image width={[423, 423, 500]} maxWidth={['90vw', '90vw']} src={rightFrontImage} />
         </Box>
       </Flex>
 
