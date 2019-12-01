@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styled from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro';
+
 import { Box, Text, TextInput } from 'design-system';
 
 const Wrapper = styled(Box)`
@@ -24,9 +25,19 @@ const Input = styled(TextInput)`
   font-size: 21.6px;
   background-color: #f3f2f7;
   color: #485c7a;
+
+  ${({ icon }) => icon && css`
+    background-image: url(${icon});
+    background-repeat: no-repeat;
+    background-position: calc(100% - 20px) center;
+  `}
+
+  ${({ shadow }) => shadow && css`
+    box-shadow: 0 2px 2px 0 rgba(0, 42, 68, 0.5);
+  `}
 `;
 
-const FormField = ({ value, placeholder, onChange }) => {
+const FormField = ({ value, placeholder, icon, width, shadow, onChange }) => {
   const [isFocused, setIsFocused] = useState(false);
   const focusedOrFilled = isFocused || !!value;
 
@@ -41,9 +52,16 @@ const FormField = ({ value, placeholder, onChange }) => {
   const handleBlur = () => setIsFocused(false);
 
   return (
-    <Wrapper>
+    <Wrapper width={width}>
       <Placeholder style={labelStyle}>{placeholder}</Placeholder>
-      <Input value={value} onChange={onChange} onFocus={handleFocus} onBlur={handleBlur} />
+      <Input
+        value={value}
+        icon={icon}
+        shadow={shadow}
+        onChange={onChange}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+      />
     </Wrapper>
   );
 };

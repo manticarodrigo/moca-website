@@ -4,17 +4,13 @@ import MailchimpSubscribe from 'react-mailchimp-subscribe';
 
 import mailchimp from 'constants/mailchimp';
 
-import { Flex, TextInput, Text } from 'design-system';
+import EmailIcon from 'assets/svgs/email-input.svg';
 
+import { Flex, Text, Button } from 'design-system';
+
+import Container from 'components/Container';
+import FormField from 'components/FormField';
 import MailchimpStatus from 'components/MailchimpStatus';
-
-const MainContainer = styled(Flex)`
-  background-color: #f6fdff;
-
-  @media (max-width: 500px) {
-    padding: 0px;
-  }
-`;
 
 const SubContainer = styled(Flex)`
   width: 100%;
@@ -59,40 +55,17 @@ const SubHeaderText = styled(Text)`
   }
 `;
 
-const EmailField = styled(TextInput)`
-  width: 400px;
-  box-sizing: border-box;
-  box-shadow: 0 2px 2px 0 rgba(0, 42, 68, 0.5);
-  padding: 20px;
-  margin-right: 10px;
-  border-radius: 10.8px;
-  border-width: 0px;
-  font-family: MuseoSansRounded-300;
-  font-size: 21.6px;
-  background-color: #f3f2f7;
-  color: #485c7a;
-
-  ::placeholder {
-    color: #8ba5b9;
-  }
-
-  @media (max-width: 500px) {
-    width: 350px;
-    margin-bottom: 20px;
-  }
-`;
-
 const EmailContainer = styled(Flex)`
+  align-items: flex-start;
+
   @media (max-width: 500px) {
     flex-direction: column;
     align-items: center;
   }
 `;
 
-const Button = styled.button`
-  width: 200px;
-  height: 76px;
-  padding: 20px;
+const SubmitButton = styled(Button)`
+  padding: 20px 35px;
   border-radius: 10.8px;
   border: solid 1.4px #e2e9ee;
   color: #ffffff;
@@ -111,7 +84,7 @@ const EmailForm = () => {
   }));
 
   return (
-    <MainContainer py={100} px={150}>
+    <Container bg="#f6fdff">
       <SubContainer>
         <HeaderText>Want more information before getting started?</HeaderText>
         <SubHeaderText>
@@ -122,15 +95,21 @@ const EmailForm = () => {
           render={({ subscribe, status, message }) => (
             <>
               <EmailContainer m={40}>
-                <EmailField placeholder="Email Address" onChange={onChangeField('EMAIL')} />
-                <Button onClick={() => subscribe(formData)}>Send</Button>
+                <FormField
+                  shadow
+                  icon={EmailIcon}
+                  value={formData.EMAIL}
+                  placeholder="Email Address"
+                  onChange={onChangeField('EMAIL')}
+                />
+                <SubmitButton ml={3} onClick={() => subscribe(formData)}>Send</SubmitButton>
               </EmailContainer>
               <MailchimpStatus status={status} message={message} />
             </>
           )}
         />
       </SubContainer>
-    </MainContainer>
+    </Container>
   );
 };
 

@@ -110,7 +110,13 @@ const ContactForm = ({ onSubmit }) => {
 
 const ContactUs = () => (
   <Container background={`url(${ContactUsImg})`}>
-    <Flex style={{ boxSizing: 'border-box' }} flexDirection="column" justifyContent="center" pr={[0, 0, 5]} width={[1, 1, 1 / 2]}>
+    <Flex
+      style={{ boxSizing: 'border-box' }}
+      flexDirection="column"
+      justifyContent="center"
+      pr={[0, 0, 5]}
+      width={[1, 1, 1 / 2]}
+    >
       <TitleText py={1} color="primary"> Want to help bring MOCA to your area? </TitleText>
       <DescriptionText color="primary" pt={4}>
         We are looking to build a coalition of professionals and patients to transform the
