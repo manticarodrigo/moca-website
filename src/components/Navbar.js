@@ -156,10 +156,17 @@ const socialLinks = {
   instagram: { icon: InstagramIcon, href: 'https://instagram.com/joinmoca' },
 };
 
+
 const NavBar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const onClickLink = () => {
+    if (menuOpen) toggleMenu();
+
+    window.scrollTo(0, 0);
+  };
 
   return (
     <>
@@ -177,7 +184,7 @@ const NavBar = () => {
             >
               <Flex alignItems="center">
                 <Flex p={2} justifyContent="center">
-                  <Link to="/">
+                  <Link to="/" onClick={onClickLink}>
                     <LogoImage distance={distanceFromTop} src={Logo} />
                   </Link>
                 </Flex>
@@ -201,7 +208,7 @@ const NavBar = () => {
                     py={2}
                     exact={value.exact}
                     to={value.to}
-                    onClick={menuOpen ? toggleMenu : undefined}
+                    onClick={onClickLink}
                   >
                     {value.title}
                   </Link>
